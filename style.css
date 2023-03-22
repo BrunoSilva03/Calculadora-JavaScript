@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+section.calculadora {
+    background-color: gray;
+}
+
+@media screen and (max-width: 768px) {
+    section.calculadora {
+        display: grid;
+
+    }
+
+    
+}
