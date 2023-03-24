@@ -11,33 +11,38 @@
 </head>
 <body>
     <h1>Calculadora JavaScript</h1>
-    <section class="calculadora">
-        <input type="number" name="numberTela" id="numberTela">
-        <button type="button" class="numberButton" id="id7" onclick="click7()">7</button>
-        <button type="button" class="numberButton" id="id8">8</button>
-        <button type="button" class="numberButton" id="id9">9</button>
-        <button type="button" class="numberButton" id="id4">4</button>
-        <button type="button" class="numberButton" id="id5">5</button>
-        <button type="button" class="numberButton" id="id6">6</button>
-        <button type="button" class="numberButton" id="id1">1</button>
-        <button type="button" class="numberButton" id="id2">2</button>
-        <button type="button" class="numberButton" id="id3">3</button>
-        <button type="button" class="numberButton" id="id0">0</button>
-        <button type="button" class="numberButton" id="idponto">.</button>
-        <button type="button" class="operadoresButton" id="idigual">=</button>
-        <button type="button" class="operadoresButton" id="idvezes">x</button>
-        <button type="button" class="operadoresButton" id="idmenos">-</button>
-        <button type="button" class="operadoresButton" id="iddividido">/</button>
-        <button type="button" class="operadoresButton" id="idmais">+</button>
+    <div class="calculadora">
+          <!-- <input type="number" name="numberTela" id="numberTela"> -->
+            <textarea name="textBox" id="telaCalculadora" cols="30" rows="10"></textarea>
+            <button type="button" class="numberButton" id="id7" onclick="click7()">7</button>
+            <button type="button" class="numberButton" id="id8" onclick="click8()">8</button>
+            <button type="button" class="numberButton" id="id9" onclick="click9()">9</button>
+            <button type="button" class="numberButton" id="id4" onclick="click4()">4</button>
+            <button type="button" class="numberButton" id="id5" onclick="click5()">5</button>
+            <button type="button" class="numberButton" id="id6" onclick="click6()">6</button>
+            <button type="reset"  class="numberButton" id="idre" onclick="clickLimpar()">limpar</button>
+            <button type="button" class="numberButton" id="id1" onclick="click1()">1</button>
+            <button type="button" class="numberButton" id="id2" onclick="click2()">2</button>
+            <button type="button" class="numberButton" id="id3" onclick="click3()">3</button>
+            <button type="button" class="numberButton" id="id0" onclick="click0()">0</button>
+            <button type="button" class="numberButton" id="idponto" onclick="clickPonto()">.</button>
+            <button type="submit" class="operadoresButton" id="idigual" onclick="clickIgual()">=</button>
+            <button type="button" class="operadoresButton" id="idvezes" onclick="clickVezes()">x</button>
+            <button type="button" class="operadoresButton" id="idmenos" onclick="clickMenos()">-</button>
+            <button type="button" class="operadoresButton" id="iddividido" onclick="clickDividido()">/</button>
+            <button type="button" class="operadoresButton" id="idmais" onclick="clickMais()">+</button>
         
         
        
         
-    </section>
+    </div>
 
     <script>
+        var digit = window.document.getElementById('telaCalculadora');
+
+
         function click7() {
-            document.write("7");
+           digit.innerText = "7";
         }
     </script>
 </body>

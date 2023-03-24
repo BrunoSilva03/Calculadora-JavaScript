@@ -31,14 +31,14 @@ button {
         margin-bottom: 30px;
     }
 
-    input {
+    textarea {
         font-family: 'Calculator Font';
         text-align: right;
         font-size: 70px;
         margin-bottom: 20px;
     }
 
-    section.calculadora {
+    div.calculadora {
         display: grid;
         background-color: gray;
         height: 79vh;
@@ -52,7 +52,7 @@ button {
         grid-template-areas: 
         "tela         tela        tela         tela        tela          "
         "button7      button8     button9      .           buttonVezes   "
-        "button4      button5     button6      .           buttonDividido"
+        "button4      button5     button6      buttonRe    buttonDividido"
         "button1      button2     button3      buttonMais  buttonMenos   "
         "button0      buttonPonto buttonIgual  buttonMais  buttonMenos   "
         ;
@@ -67,7 +67,7 @@ button {
         padding: 33px;
     }
 
-    input {
+    textarea {
         font-family: 'Calculator Font';
         font-size: 70px;
         text-align: right;
@@ -78,7 +78,7 @@ button {
         margin-bottom: 20px;
     }
 
-    section.calculadora {
+    div.calculadora {
         max-width: 500px;
         background-color: lightgray;
         margin: 0 auto;
@@ -93,7 +93,7 @@ button {
         grid-template-areas: 
         "tela      tela          tela          tela        tela          "
         "button7   button8       button9       .           buttonVezes   "
-        "button4   button5       button6       .           buttonDividido"
+        "button4   button5       button6       buttonRe    buttonDividido"
         "button1   button2       button3       buttonMais  buttonMenos   "
         "button0   buttonPonto   buttonIgual   buttonMais  buttonMenos   "
         ;
@@ -115,7 +115,7 @@ button {
         margin-bottom: 33px;
     }
 
-    input {
+    textarea {
         font-family: 'Calculator Font';
         font-size: 70px;
         text-align: right;
@@ -124,7 +124,7 @@ button {
         margin-top: -10px;
     }
 
-    section.calculadora {
+    div.calculadora {
         background-color: gray;
         margin: 0 auto;
         max-width: 500px;
@@ -134,7 +134,7 @@ button {
         box-shadow: 1px 1px 5px black;
     }
 
-    section.calculadora {
+    div.calculadora {
         display: grid;
         grid-gap: .3rem;
         grid-template-columns: repeat(5, 1fr);
@@ -142,7 +142,7 @@ button {
         grid-template-areas: 
         "tela       tela          tela            tela         tela          "
         "button7    button8       button9         .            buttonVezes   "
-        "button4    button5       button6         .            buttonDividido"
+        "button4    button5       button6         buttonRe     buttonDividido"
         "button1    button2       button3         buttonMenos  buttonMais    "
         "button0    buttonPonto   buttonIgual     buttonMenos  buttonMais    "
         ;
@@ -155,7 +155,7 @@ button {
 
 @media screen and (max-width: 653px) {
 
-    input {
+    textarea {
         font-family: 'Calculator Font';
         margin-bottom: 20px;
         font-size: 70px;
@@ -164,23 +164,31 @@ button {
     
     }
 
-    section.calculadora {
+    
+    div.calculadora {
         display: grid;
+        background-color: gray;
+        padding: 33px;
+        border-radius: 20px;
+        box-shadow: 2px 1px 6px black;
         grid-gap: .1rem;
         grid-template-columns: repeat(5, 1fr);
         grid-template-rows: repeat(5, 1fr);
         grid-template-areas: 
         "tela      tela          tela          tela                 tela           "
         "button7   button8       button9       .                    buttonVezes    "
-        "button4   button5       button6       .                    buttonDividido "
+        "button4   button5       button6       buttonRe             buttonDividido "
         "button1   button2       button3       buttonMais           buttonMenos    "
         "button0   buttonPonto   buttonIgual   buttonMais           buttonMenos    "
         ;
 
     }
+    
+
+   
 }
 
-input#numberTela {
+textarea#telaCalculadora {
     grid-area: tela;
 }
 
@@ -206,6 +214,10 @@ button#id5 {
 
 button#id6 {
     grid-area: button6;
+}
+
+button#idre {
+    grid-area: buttonRe;
 }
 
 button#id1 {
