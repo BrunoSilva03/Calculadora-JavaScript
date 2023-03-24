@@ -7,12 +7,13 @@
     <title>Calculadora</title>
     <link rel="shortcut icon" href="imagens/Oxygen-Icons.org-Oxygen-Apps-accessories-calculator.256.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <h1>Calculadora JavaScript</h1>
     <section class="calculadora">
-        <input type="number" name="textNumber" id="textNumber">
-        <button type="button" class="numberButton" id="id7">7</button>
+        <input type="number" name="numberTela" id="numberTela">
+        <button type="button" class="numberButton" id="id7" onclick="click7()">7</button>
         <button type="button" class="numberButton" id="id8">8</button>
         <button type="button" class="numberButton" id="id9">9</button>
         <button type="button" class="numberButton" id="id4">4</button>
@@ -33,5 +34,11 @@
        
         
     </section>
+
+    <script>
+        function click7() {
+            document.write("7");
+        }
+    </script>
 </body>
 </html>
