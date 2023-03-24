@@ -15,15 +15,15 @@ button {
 }
 
 
-@media screen and (min-width: 769px) {
+
+
+@media screen and (min-width: 769px)  and (max-width: 992px){
     body {
         height: 100vh;
         padding: 33px;
     }
 
-    input {
-        margin-bottom: 15px;
-    }
+    
 
     h1 {
         text-align: center;
@@ -31,7 +31,7 @@ button {
     }
 
     section.calculadora {
-        max-width: 700px;
+        max-width: 500px;
         background-color: lightgray;
         margin: 0 auto;
         height: 79vh;
@@ -39,18 +39,20 @@ button {
         border-radius: 20px;
         box-shadow: 1px 3px 5px black;
         display: grid;
-        grid-gap: 2rem;
-        grid-template-columns: repeat(7, 1fr);
+        grid-gap: 1rem;
+        grid-template-columns: repeat(5, 1fr);
         grid-template-rows: repeat(5, 1fr);
         grid-template-areas: 
-        ".     tela      tela          tela         tela          tela            ."
-        ".     button7   button8       button9       .             buttonVezes    ."
-        ".     button4   button5       button6       .             buttonDividido ."
-        ".     button1   button2       button3       buttonMenos   buttonMais     ."
-        ".     button0   buttonPonto   buttonIgual   buttonMenos   buttonMais     ."
+        "tela      tela          tela          tela        tela          "
+        "button7   button8       button9       .           buttonVezes   "
+        "button4   button5       button6       .           buttonDividido"
+        "button1   button2       button3       buttonMais  buttonMenos   "
+        "button0   buttonPonto   buttonIgual   buttonMais  buttonMenos   "
         ;
     }
 }
+
+
 
 @media screen and (max-width: 768px) {
     body {
@@ -65,9 +67,15 @@ button {
         margin-bottom: 33px;
     }
 
+    input {
+        margin-bottom: 10px;
+        margin-top: -10px;
+    }
+
     section.calculadora {
         background-color: gray;
         margin: 0 auto;
+        max-width: 500px;
         height: 70vh;
         padding: 33px;
         border-radius: 20px;
@@ -76,15 +84,15 @@ button {
 
     section.calculadora {
         display: grid;
-        grid-gap: 1rem;
-        grid-template-columns: repeat(7, 1fr);
+        grid-gap: .3rem;
+        grid-template-columns: repeat(5, 1fr);
         grid-template-rows: repeat(5, 1fr);
         grid-template-areas: 
-        "tela      tela      tela          tela          tela        tela                         tela      "
-        ".         button7   button8       button9       .           buttonVezes                  .         "
-        ".         button4   button5       button6       .           buttonDividido               .         "
-        ".         button1   button2       button3       .           buttonMenos                  buttonMais"
-        ".         button0   buttonPonto   buttonIgual   .           buttonMenos                  buttonMais"
+        "tela       tela          tela            tela         tela          "
+        "button7    button8       button9         .            buttonVezes   "
+        "button4    button5       button6         .            buttonDividido"
+        "button1    button2       button3         buttonMenos  buttonMais    "
+        "button0    buttonPonto   buttonIgual     buttonMenos  buttonMais    "
         ;
 
     }
