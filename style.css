@@ -14,7 +14,42 @@ button {
     border-radius: 10px;
 }
 
+@media screen and (min-width: 993px) {
+    body {
+        height: 100vh;
+        padding: 33px;
+    }
 
+    h1 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    input {
+        margin-bottom: 20px;
+    }
+
+    section.calculadora {
+        display: grid;
+        background-color: gray;
+        height: 79vh;
+        margin: 0 auto;
+        max-width: 500px;
+        padding: 33px;
+        border-radius: 20px;
+        box-shadow: 2px 1px 6px black;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-areas: 
+        "tela         tela        tela         tela        tela          "
+        "button7      button8     button9      .           buttonVezes   "
+        "button4      button5     button6      .           buttonDividido"
+        "button1      button2     button3      buttonMais  buttonMenos   "
+        "button0      buttonPonto buttonIgual  buttonMais  buttonMenos   "
+        ;
+
+    }
+}
 
 
 @media screen and (min-width: 769px)  and (max-width: 992px){
