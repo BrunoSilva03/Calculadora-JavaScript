@@ -39,50 +39,92 @@
 
     <script>
         var digit = window.document.getElementById('telaCalculadora');
+        var caracteres = 0;
+        var numero;
+
+        digit.addEventListener("keypress", function(e) {
+            console.log("digitou");
+        });
 
         function click0() {
-            digit.innerText = "0";
+            if (caracteres == 0) {
+                digit.innerText = "0";
+                numero = "0";
+                caracteres++;
+            } else {
+                numero = numero + "0";
+                digit.innerText = numero;
+                caracteres++;
+            }
+            
+
+           
         }
 
         function click1() {
             digit.innerText = "1";
+            caracteres++
         }
 
         function click2() {
             digit.innerText = "2";
+            caracteres++
         }
 
         function click3() {
             digit.innerText = "3";
+            caracteres++
         }
 
         function click4() {
             digit.innerText = "4";
+            caracteres++
         }
 
 
         function click5() {
             digit.innerText = "5";
+            caracteres++
         }
 
         function click6() {
             digit.innerText = "6";
+            caracteres++
         }
 
         function click7() {
            digit.innerText = "7";
+           caracteres++
         }
 
         function click8() {
             digit.innerText = "8";
+            caracteres++
         }
 
         function click9() {
             digit.innerText = "9";
+            caracteres++
         }
 
         function clickPonto() {
             digit.innerText = ",";
+        }
+
+        function clickDividido() {
+            digit.innerText = " / ";
+        }
+        
+        function clickMenos() {
+            digit.innerText = " - ";
+        }
+
+        function clickVezes() {
+            digit.innerText = " X ";
+        }
+
+        function clickMais() {
+            digit.innerText = " + ";
         }
 
         
