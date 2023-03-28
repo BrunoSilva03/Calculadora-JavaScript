@@ -41,6 +41,8 @@
         var digit = window.document.getElementById('telaCalculadora');
         var caracteres = 0;
         var numero;
+        var widthTela = document.body.scrollWidth;
+       
 
         digit.addEventListener("keypress", function(e) {
             console.log("digitou");
@@ -104,7 +106,7 @@
                 caracteres++
           } else {
             numero = numero + "4";
-            digit.innerText = numero;
+            digit.innerText = numero
             caracteres++;
           }
         }

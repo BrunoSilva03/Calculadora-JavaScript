@@ -38,6 +38,7 @@ button {
         margin-bottom: 20px;
         resize: none;
         overflow-y: hidden;
+        scrollbar
     }
 
     div.calculadora {
