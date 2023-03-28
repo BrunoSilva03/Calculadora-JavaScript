@@ -13,7 +13,7 @@
     <h1>Calculadora JavaScript</h1>
     <div class="calculadora">
           <!-- <input type="number" name="numberTela" id="numberTela"> -->
-            <textarea name="textBox" id="telaCalculadora" cols="30" rows="10"></textarea>
+            <textarea name="textBox" id="telaCalculadora" cols="30" rows="10" wrap="off"></textarea>
             <button type="button" class="numberButton" id="id7" onclick="click7()">7</button>
             <button type="button" class="numberButton" id="id8" onclick="click8()">8</button>
             <button type="button" class="numberButton" id="id9" onclick="click9()">9</button>
@@ -135,39 +135,91 @@
         }
 
         function click7() {
-            if ( )
-           digit.innerText = "7";
-           caracteres++
+            if ( caracteres == 0) {
+                digit.innerText = "7";
+                caracteres++
+            } else {
+                numero = numero + "7";
+                digit.innerText = numero;
+                caracteres++
+            }
+          
         }
 
         function click8() {
-            digit.innerText = "8";
-            caracteres++
+            if (caracteres == 0) {
+                digit.innerText = "8";
+                caracteres++
+            } else {
+                numero = numero + "8";
+                digit.innerText = numero;
+                caracteres++
+            }
+            
         }
 
         function click9() {
-            digit.innerText = "9";
-            caracteres++
+            if (caracteres == 0) {
+                digit.innerText = "9";
+                caracteres++
+            } else {
+                numero = numero + "9";
+                digit.innerText = numero;
+                caracteres++;
+            }
+            
+            
         }
 
         function clickPonto() {
-            digit.innerText = ",";
+            if (caracteres == 0 ) {
+                digit.innerText = " . ";
+            } else {
+                numero = numero + ".";
+                digit.innerText = numero;
+            }
+            
         }
 
         function clickDividido() {
-            digit.innerText = " / ";
+            if (caracteres == 0) {
+                digit.innerText = " / "
+            } else {
+                numero = numero + " /"
+                digit.innerText = numero;
+            }
+            
         }
         
         function clickMenos() {
-            digit.innerText = " - ";
+            if (caracteres == 0) {
+                digit.innerTex = " - ";
+            } else {
+                numero = numero + " -";
+                digit.innerText = numero;
+            }
+            
         }
 
         function clickVezes() {
-            digit.innerText = " X ";
+            if (caracteres == 0) {
+                digit.innerText = " X ";
+            } else {
+                numero = numero + " X";
+                digit.innerText = numero;
+            }
+            
         }
 
         function clickMais() {
-            digit.innerText = " + ";
+            if (caracteres == 0) {
+                digit.innerText = " + ";
+            } else {
+                numero = numero + " +";
+                digit.innerText = numero;
+            }
+
+          
         }
 
         
