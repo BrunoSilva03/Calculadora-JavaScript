@@ -38,6 +38,9 @@ button {
         margin-bottom: 20px;
         resize: none;
         overflow-y: hidden;
+        overflow-wrap: normal;
+        white-space: nowrap;
+        
         
     }
 
@@ -170,6 +173,13 @@ button {
         font-weight: normal;
         resize: none;
         overflow-y: hidden;
+        overflow-wrap: normal;
+        
+       
+        
+        
+        
+
     
     }
 
