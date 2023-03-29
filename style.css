@@ -37,6 +37,11 @@ button {
         resize: none;
         overflow-y: hidden;
         white-space: nowrap;
+
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row-reverse;
+        /* pensar mais sobre isso que parece que está indo no caminho certo.
         
     }
 
@@ -47,6 +52,8 @@ button {
         position: end;
     }
     */
+
+   
 
     div.calculadora {
         display: grid;
