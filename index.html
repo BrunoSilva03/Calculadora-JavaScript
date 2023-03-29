@@ -13,7 +13,7 @@
     <h1>Calculadora JavaScript</h1>
     <div class="calculadora">
           <!-- <input type="number" name="numberTela" id="numberTela"> -->
-            <textarea name="textBox1" id="telaCalculadora" cols="30" rows="5" wrap="off" style="white-space: nowrap;"></textarea>
+            <textarea name="textBox1" id="telaCalculadora" cols="30" rows="5" wrap="off"></textarea>
             <button type="button" class="numberButton" id="id7" onclick="click7()">7</button>
             <button type="button" class="numberButton" id="id8" onclick="click8()">8</button>
             <button type="button" class="numberButton" id="id9" onclick="click9()">9</button>
@@ -39,6 +39,7 @@
 
     <script>
         var digit = window.document.getElementById('telaCalculadora');
+        digit.scrollTop = digit.scrollWidth;  //mantem o scroll horizontal no final do textArea quando sai da janela e volta. As vezes da certo e as vezes não uai.
         var caracteres = 0;
         var numero;
        

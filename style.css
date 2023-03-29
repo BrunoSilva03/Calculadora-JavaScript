@@ -12,8 +12,6 @@
     box-sizing: border-box;
 }
 
-
-
 button {
     background-color: black;
     color: white;
@@ -38,11 +36,17 @@ button {
         margin-bottom: 20px;
         resize: none;
         overflow-y: hidden;
-        overflow-wrap: normal;
         white-space: nowrap;
         
-        
     }
+
+    /*
+    textarea::-webkit-scrollbar {
+        display: flex;
+        flex-direction: row;
+        position: end;
+    }
+    */
 
     div.calculadora {
         display: grid;
