@@ -13,7 +13,7 @@
     <h1>Calculadora JavaScript</h1>
     <div class="calculadora">
           <!-- <input type="number" name="numberTela" id="numberTela"> -->
-            <textarea name="textBox" id="telaCalculadora" cols="30" rows="10" wrap="off"></textarea>
+            <textarea name="textBox1" id="telaCalculadora" cols="30" rows="5" wrap="off"></textarea>
             <button type="button" class="numberButton" id="id7" onclick="click7()">7</button>
             <button type="button" class="numberButton" id="id8" onclick="click8()">8</button>
             <button type="button" class="numberButton" id="id9" onclick="click9()">9</button>
@@ -41,12 +41,9 @@
         var digit = window.document.getElementById('telaCalculadora');
         var caracteres = 0;
         var numero;
-        var widthTela = document.body.scrollWidth;
        
 
-        digit.addEventListener("keypress", function(e) {
-            console.log("digitou");
-        });
+        
 
         function click0() {
             if (caracteres == 0) {
@@ -79,6 +76,7 @@
         function click2() {
             if (caracteres == 0) {
                 digit.innerText = "2";
+                numero = "2";
                 caracteres++
             } else {
                 numero = numero + "2";
@@ -91,6 +89,7 @@
         function click3() {
             if (caracteres == 0) {
                 digit.innerText = "3";
+                numero = "3";
                 caracteres++;
             } else {
                 numero = numero + "3";
@@ -103,6 +102,7 @@
         function click4() {
           if (caracteres == 0) {
                 digit.innerText = "4";
+                numero = "4";
                 caracteres++
           } else {
             numero = numero + "4";
@@ -115,6 +115,7 @@
         function click5() {
             if (caracteres == 0) {
                 digit.innerText = "5";
+                numero = "5";
                 caracteres++
             } else {
                 numero = numero + "5";
@@ -127,6 +128,7 @@
         function click6() {
             if (caracteres == 0) {
                 digit.innerText = "6";
+                numero = "6";
                 caracteres++
             } else {
                 numero = numero + "6";
@@ -139,6 +141,7 @@
         function click7() {
             if ( caracteres == 0) {
                 digit.innerText = "7";
+                numero = "7";
                 caracteres++
             } else {
                 numero = numero + "7";
@@ -151,6 +154,7 @@
         function click8() {
             if (caracteres == 0) {
                 digit.innerText = "8";
+                numero = "8";
                 caracteres++
             } else {
                 numero = numero + "8";
@@ -163,6 +167,7 @@
         function click9() {
             if (caracteres == 0) {
                 digit.innerText = "9";
+                numero = "9";
                 caracteres++
             } else {
                 numero = numero + "9";
@@ -195,7 +200,7 @@
         
         function clickMenos() {
             if (caracteres == 0) {
-                digit.innerTex = " - ";
+                digit.innerText = " - ";
             } else {
                 numero = numero + " -";
                 digit.innerText = numero;
