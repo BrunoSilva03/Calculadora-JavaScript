@@ -248,9 +248,6 @@
         }
 
         function clickMenos() {
-            console.log("numero: " + numero);
-            console.log("numero1: " + numero1);
-            console.log("numero2: " + numero2);
             if (operadorAtivado == false) {
                 if (caracteres == 0) {
                     digit.innerText = " - ";
@@ -372,9 +369,6 @@
                     }
 
                     if (menosAtivado == true) {
-                        console.log("numero = : " + numero);
-                        console.log("numero1 = : " + numero1);
-                        console.log("numero2 = : " + numero2)
                         resultado = numero1 - numero2;
                         digit.innerText = resultado;
                         menosAtivado = false;
