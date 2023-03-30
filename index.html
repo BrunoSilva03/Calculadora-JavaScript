@@ -263,17 +263,36 @@
         }
 
         function clickVezes() {
-            if (caracteres == 0) {
-                digit.innerText = " X ";
-            } else {
-                numero1 = Number(numero);
-                numero = numero + " X";
-                digit.innerText = numero;
-                operadorAtivado = true;
-                vezesAtivado = true;
-                numero = null;
-                caracteres = 0;
+            if (operadorAtivado == false) {
+                if (caracteres == 0) {
+                    digit.innerText = " X ";
+                } else {
+                    numero1 = Number(numero);
+                    numero = numero + " X";
+                    digit.innerText = numero;
+                    operadorAtivado = true;
+                    vezesAtivado = true;
+                    numero = null;
+                    caracteres = 0;
+                }
             }
+
+            if (operadorAtivado == true) {
+                if (caracteres == 0) {
+
+                } else {
+                    numero2 = Number(numero);
+                    novoNum = numero1 * numero2;
+                    numero1 = novoNum;
+                    numero = String(novoNum);
+                    numero = numero + " X";
+                    digit.innerText = numero;
+                    operadorAtivado = true;
+                    vezesAtivado = true;
+                    caracteres = 0;
+                }
+            }
+
 
         }
 
@@ -283,15 +302,12 @@
                     digit.innerText = " + ";
                 } else {
                     numero1 = Number(numero);
-                    console.log("numero1: " + numero1);
                     numero = numero + " +";
                     digit.innerText = numero;
                     operadorAtivado = true;
                     maisAtivado = true;
                     numero = null;
                     caracteres = 0;
-                    console.log("numero1 1º vez: " + numero1);
-                    console.log("numero2 1º vez: " + numero2);
                 }
             }
 
@@ -308,13 +324,10 @@
                     operadorAtivado = true;
                     maisAtivado = true;
                     caracteres = 0;
-                    console.log("novoNum + de novo: " + novoNum);
-                    console.log("numero1 + de novo: " + numero1);
-                    console.log("numero2 + de novo: " + numero2);
                 }
             }
 
-         
+
 
 
 
@@ -334,31 +347,24 @@
                         resultado = numero1 / numero2;
                         digit.innerText = resultado;
                         divididoAtivado = false;
-                        numero1 = resultado;
                     }
 
                     if (menosAtivado == true) {
                         resultado = numero1 - numero2;
                         digit.innerText = resultado;
                         menosAtivado = false;
-                        numero1 = resultado;
                     }
 
                     if (vezesAtivado == true) {
                         resultado = numero1 * numero2;
                         digit.innerText = resultado;
                         vezesAtivado = false;
-                        numero1 = resultado;
                     }
 
                     if (maisAtivado == true) {
                         resultado = numero1 + numero2;
                         digit.innerText = resultado;
                         maisAtivado = false;
-                        //   numero1 = resultado;
-                        console.log("novoNum = : " + novoNum);
-                        console.log("numero1 = : " + numero1);
-                        console.log("numero2 = : " + numero2);
                     }
 
                     igualAtivado = true;
