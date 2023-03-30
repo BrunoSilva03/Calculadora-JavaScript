@@ -74,7 +74,7 @@
 
             if (operadorAtivado == true) {
                 if (caracteres == 0) {
-                    digit.innerTex = "0";
+                    digit.innerText = "0";
                     numero = "0";
                     caracteres++;
                 } else {
@@ -98,6 +98,7 @@
                 numero = numero + "1";
                 digit.innerText = numero;
                 caracteres++;
+
             }
 
         }
@@ -294,7 +295,7 @@
                 }
             }
 
-            if (operadorAtivado == true && igualAtivado == false) {
+            if (operadorAtivado == true) {
                 if (caracteres == 0) {  //não sei porquê dá certo, mas dá certo!
 
                 } else {
@@ -313,13 +314,7 @@
                 }
             }
 
-            if (operadorAtivado == true && igualAtivado == true) {
-                numero = resultado;
-                numero = numero + " +";
-                digit.innerText = numero;
-                resultado = null;
-
-            }
+         
 
 
 
@@ -360,7 +355,7 @@
                         resultado = numero1 + numero2;
                         digit.innerText = resultado;
                         maisAtivado = false;
-                        numero1 = resultado;
+                        //   numero1 = resultado;
                         console.log("novoNum = : " + novoNum);
                         console.log("numero1 = : " + numero1);
                         console.log("numero2 = : " + numero2);
