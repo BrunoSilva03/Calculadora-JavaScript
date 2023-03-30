@@ -248,17 +248,39 @@
         }
 
         function clickMenos() {
-            if (caracteres == 0) {
-                digit.innerText = " - ";
-            } else {
-                numero1 = Number(numero);
-                numero = numero + " -";
-                digit.innerText = numero;
-                operadorAtivado = true;
-                menosAtivado = true;
-                numero = null;
-                caracteres = 0;
+            console.log("numero: " + numero);
+            console.log("numero1: " + numero1);
+            console.log("numero2: " + numero2);
+            if (operadorAtivado == false) {
+                if (caracteres == 0) {
+                    digit.innerText = " - ";
+                } else {
+                    numero1 = Number(numero);
+                    numero = numero + " -";
+                    digit.innerText = numero;
+                    operadorAtivado = true;
+                    menosAtivado = true;
+                    numero = null;
+                    caracteres = 0;
+                }
             }
+
+            if (operadorAtivado == true) {
+                if (caracteres = 0) {
+                    
+                } else {
+                    numero2 = Number(numero);
+                    novoNum = numero1 - numero2;
+                    numero1 = novoNum;
+                    numero = String(novoNum);
+                    numero = numero + " -";
+                    digit.innerText = numero;
+                    operadorAtivado = true;
+                    menosAtivado = true;
+                    caracteres = 0;
+                }
+            }
+
 
         }
 
@@ -350,6 +372,9 @@
                     }
 
                     if (menosAtivado == true) {
+                        console.log("numero = : " + numero);
+                        console.log("numero1 = : " + numero1);
+                        console.log("numero2 = : " + numero2)
                         resultado = numero1 - numero2;
                         digit.innerText = resultado;
                         menosAtivado = false;
