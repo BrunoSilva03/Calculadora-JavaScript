@@ -42,6 +42,11 @@
         digit.scrollTop = digit.scrollWidth;  //mantem o scroll horizontal no final do textArea quando sai da janela e volta. As vezes da certo e as vezes não uai.
         var caracteres = 0;
         var numero;
+        var operadorOn = false;
+        var maisAtivado = false;
+        var menosAtivado = false;
+        var divididoAtivado = false;
+        var vezesAtivado = false;
        
 
         
@@ -195,6 +200,7 @@
             } else {
                 numero = numero + " /"
                 digit.innerText = numero;
+                operadorOn = true;
             }
             
         }
@@ -205,6 +211,7 @@
             } else {
                 numero = numero + " -";
                 digit.innerText = numero;
+                operadorOn = true;
             }
             
         }
@@ -215,6 +222,7 @@
             } else {
                 numero = numero + " X";
                 digit.innerText = numero;
+                operadorOn = true;
             }
             
         }
@@ -225,9 +233,28 @@
             } else {
                 numero = numero + " +";
                 digit.innerText = numero;
+                operadorOn = true;
             }
 
           
+        }
+
+        function clickIgual() {
+            if (caracteres == 0) {
+                digit.innerText = " = ";
+            } else {
+                if (operadorOn == false) {
+                    digit.innerText = numero;
+                } else {
+
+                }
+
+
+            }
+        }
+
+        function clickLimpar() {
+
         }
 
         
