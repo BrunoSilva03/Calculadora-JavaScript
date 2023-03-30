@@ -42,13 +42,14 @@
         digit.scrollTop = digit.scrollWidth;  //mantem o scroll horizontal no final do textArea quando sai da janela e volta. As vezes da certo e as vezes não uai.
         var caracteres = 0;
         var numero;
-        var operadorOn = false;
+        var operadorAtivado = false;
         var maisAtivado = false;
         var menosAtivado = false;
         var divididoAtivado = false;
         var vezesAtivado = false;
         var numero1 = null;
         var numero2 = null;
+        var resultado = null;
        
 
         
@@ -178,17 +179,30 @@
         }
 
         function click9() {
-            if (caracteres == 0) {
-                digit.innerText = "9";
-                numero = "9";
-                caracteres++
-            } else {
-                numero = numero + "9";
-                digit.innerText = numero;
-                caracteres++;
+            if (operadorAtivado == false) {
+                if (caracteres == 0) {  //se não tiver nenhum algarismo digitado ainda
+                    digit.innerText = "9";
+                    numero = "9";
+                    caracteres++
+                } else {               //se já tiver algum algarismo digitado
+                    numero = numero + "9";
+                    digit.innerText = numero;
+                    caracteres++;
+                }
             }
-            
-            
+
+            if (operadorAtivado == true) {  //se já foi ativado o / * - ou +
+                if (caracteres == 0) {    //se não tiver nenhum algarismo digitado ainda
+                    numero = "9";
+                    digit.innerText = numero;
+                    caracteres++;
+                } else {                   //se já tiver algum algarismo digitado
+                    numero = numero + "9";
+                    digit.innerText = numero;
+                    caracteres++;
+                }
+                
+            }
         }
 
         function clickPonto() {
@@ -207,9 +221,10 @@
             } else {
                 numero = numero + " /"
                 digit.innerText = numero;
-                operadorOn = true;
+                operadorAtivado = true;
                 divididoAtivado = true;
-                numero1 = numero;
+                numero1 = Number(numero);
+                caracteres = 0;
             }
             
         }
@@ -220,9 +235,9 @@
             } else {
                 numero = numero + " -";
                 digit.innerText = numero;
-                operadorOn = true;
+                operadorAtivado = true;
                 menosAtivado = true;
-                numero1 = numero;
+                numero1 = Number(numero);
             }
             
         }
@@ -233,9 +248,9 @@
             } else {
                 numero = numero + " X";
                 digit.innerText = numero;
-                operadorOn = true;
+                operadorAtivado = true;
                 vezesAtivado = true;
-                numero1 = numero;
+                numero1 = Number(numero);
             }
             
         }
@@ -246,9 +261,9 @@
             } else {
                 numero = numero + " +";
                 digit.innerText = numero;
-                operadorOn = true;
+                operadorAtivado = true;
                 maisAtivado = true;
-                numero1 = numero;
+                numero1 = Number(numero);
             }
 
           
@@ -258,10 +273,15 @@
             if (caracteres == 0) {
                 digit.innerText = " = ";
             } else {
-                if (operadorOn == false) {
+                if (operadorAtivado == false) {
                     digit.innerText = numero;
                 } else {
+                    numero2 = Number(numero);
 
+                    if (divididoAtivado == true) {
+                        resultado = numero1 / numero2;
+                        digit.innerText = resultado;
+                    }
                 }
 
 
