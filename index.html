@@ -47,6 +47,8 @@
         var menosAtivado = false;
         var divididoAtivado = false;
         var vezesAtivado = false;
+        var numero1 = null;
+        var numero2 = null;
        
 
         
@@ -124,9 +126,14 @@
                 numero = "5";
                 caracteres++
             } else {
-                numero = numero + "5";
-                digit.innerText = numero;
-                caracteres++;
+
+               
+                    numero = numero + "5";
+                    digit.innerText = numero;
+                    caracteres++;
+                   
+                
+                
             }
             
         }
@@ -201,6 +208,8 @@
                 numero = numero + " /"
                 digit.innerText = numero;
                 operadorOn = true;
+                divididoAtivado = true;
+                numero1 = numero;
             }
             
         }
@@ -212,6 +221,8 @@
                 numero = numero + " -";
                 digit.innerText = numero;
                 operadorOn = true;
+                menosAtivado = true;
+                numero1 = numero;
             }
             
         }
@@ -223,6 +234,8 @@
                 numero = numero + " X";
                 digit.innerText = numero;
                 operadorOn = true;
+                vezesAtivado = true;
+                numero1 = numero;
             }
             
         }
@@ -234,6 +247,8 @@
                 numero = numero + " +";
                 digit.innerText = numero;
                 operadorOn = true;
+                maisAtivado = true;
+                numero1 = numero;
             }
 
           
