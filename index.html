@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
-    <link rel="shortcut icon" href="imagens/Oxygen-Icons.org-Oxygen-Apps-accessories-calculator.256.png" type="image/x-icon">
+    <link rel="shortcut icon" href="imagens/Oxygen-Icons.org-Oxygen-Apps-accessories-calculator.256.png"
+        type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 
 </head>
+
 <body>
     <h1>Calculadora JavaScript</h1>
     <div class="calculadora">
-          <!-- <input type="number" name="numberTela" id="numberTela"> -->
-            <textarea name="textBox1" id="telaCalculadora" cols="30" rows="5" wrap="off"></textarea>
-            <button type="button" class="numberButton" id="id7" onclick="click7()">7</button>
-            <button type="button" class="numberButton" id="id8" onclick="click8()">8</button>
-            <button type="button" class="numberButton" id="id9" onclick="click9()">9</button>
-            <button type="button" class="numberButton" id="id4" onclick="click4()">4</button>
-            <button type="button" class="numberButton" id="id5" onclick="click5()">5</button>
-            <button type="button" class="numberButton" id="id6" onclick="click6()">6</button>
-            <button type="reset"  class="numberButton" id="idre" onclick="clickLimpar()">limpar</button>
-            <button type="button" class="numberButton" id="id1" onclick="click1()">1</button>
-            <button type="button" class="numberButton" id="id2" onclick="click2()">2</button>
-            <button type="button" class="numberButton" id="id3" onclick="click3()">3</button>
-            <button type="button" class="numberButton" id="id0" onclick="click0()">0</button>
-            <button type="button" class="numberButton" id="idponto" onclick="clickPonto()">.</button>
-            <button type="submit" class="operadoresButton" id="idigual" onclick="clickIgual()">=</button>
-            <button type="button" class="operadoresButton" id="idvezes" onclick="clickVezes()">x</button>
-            <button type="button" class="operadoresButton" id="idmenos" onclick="clickMenos()">-</button>
-            <button type="button" class="operadoresButton" id="iddividido" onclick="clickDividido()">/</button>
-            <button type="button" class="operadoresButton" id="idmais" onclick="clickMais()">+</button>
-        
-        
-       
-        
+        <!-- <input type="number" name="numberTela" id="numberTela"> -->
+        <textarea name="textBox1" id="telaCalculadora" cols="30" rows="5" wrap="off"></textarea>
+        <button type="button" class="numberButton" id="id7" onclick="click7()">7</button>
+        <button type="button" class="numberButton" id="id8" onclick="click8()">8</button>
+        <button type="button" class="numberButton" id="id9" onclick="click9()">9</button>
+        <button type="button" class="numberButton" id="id4" onclick="click4()">4</button>
+        <button type="button" class="numberButton" id="id5" onclick="click5()">5</button>
+        <button type="button" class="numberButton" id="id6" onclick="click6()">6</button>
+        <button type="reset" class="numberButton" id="idre" onclick="clickLimpar()">limpar</button>
+        <button type="button" class="numberButton" id="id1" onclick="click1()">1</button>
+        <button type="button" class="numberButton" id="id2" onclick="click2()">2</button>
+        <button type="button" class="numberButton" id="id3" onclick="click3()">3</button>
+        <button type="button" class="numberButton" id="id0" onclick="click0()">0</button>
+        <button type="button" class="numberButton" id="idponto" onclick="clickPonto()">.</button>
+        <button type="submit" class="operadoresButton" id="idigual" onclick="clickIgual()">=</button>
+        <button type="button" class="operadoresButton" id="idvezes" onclick="clickVezes()">x</button>
+        <button type="button" class="operadoresButton" id="idmenos" onclick="clickMenos()">-</button>
+        <button type="button" class="operadoresButton" id="iddividido" onclick="clickDividido()">/</button>
+        <button type="button" class="operadoresButton" id="idmais" onclick="clickMais()">+</button>
+
+
+
+
     </div>
 
     <script>
@@ -47,26 +50,43 @@
         var menosAtivado = false;
         var divididoAtivado = false;
         var vezesAtivado = false;
+        var igualAtivado = false;
         var numero1 = null;
         var numero2 = null;
         var resultado = null;
-       
+        var novoNum = null;
 
-        
+
+
 
         function click0() {
-            if (caracteres == 0) {
-                digit.innerText = "0";
-                numero = "0";
-                caracteres++;
-            } else {
-                numero = numero + "0";
-                digit.innerText = numero;
-                caracteres++;
+            if (operadorAtivado == false) {
+                if (caracteres == 0) {
+                    digit.innerText = "0";
+                    numero = "0";
+                    caracteres++;
+                } else {
+                    numero = numero + "0";
+                    digit.innerText = numero;
+                    caracteres++;
+                }
             }
-            
 
-           
+            if (operadorAtivado == true) {
+                if (caracteres == 0) {
+                    digit.innerTex = "0";
+                    numero = "0";
+                    caracteres++;
+                } else {
+                    numero = numero + "0";
+                    digit.innerText = numero;
+                    caracteres++;
+                }
+            }
+
+
+
+
         }
 
         function click1() {
@@ -79,7 +99,7 @@
                 digit.innerText = numero;
                 caracteres++;
             }
-            
+
         }
 
         function click2() {
@@ -92,7 +112,7 @@
                 digit.innerText = numero;
                 caracteres++;
             }
-           
+
         }
 
         function click3() {
@@ -105,19 +125,19 @@
                 digit.innerText = numero;
                 caracteres++;
             }
-            
+
         }
 
         function click4() {
-          if (caracteres == 0) {
+            if (caracteres == 0) {
                 digit.innerText = "4";
                 numero = "4";
                 caracteres++
-          } else {
-            numero = numero + "4";
-            digit.innerText = numero
-            caracteres++;
-          }
+            } else {
+                numero = numero + "4";
+                digit.innerText = numero
+                caracteres++;
+            }
         }
 
 
@@ -127,16 +147,12 @@
                 numero = "5";
                 caracteres++
             } else {
+                numero = numero + "5";
+                digit.innerText = numero;
+                caracteres++;
 
-               
-                    numero = numero + "5";
-                    digit.innerText = numero;
-                    caracteres++;
-                   
-                
-                
             }
-            
+
         }
 
         function click6() {
@@ -149,11 +165,11 @@
                 digit.innerText = numero;
                 caracteres++;
             }
-            
+
         }
 
         function click7() {
-            if ( caracteres == 0) {
+            if (caracteres == 0) {
                 digit.innerText = "7";
                 numero = "7";
                 caracteres++
@@ -162,7 +178,7 @@
                 digit.innerText = numero;
                 caracteres++
             }
-          
+
         }
 
         function click8() {
@@ -175,7 +191,7 @@
                 digit.innerText = numero;
                 caracteres++
             }
-            
+
         }
 
         function click9() {
@@ -201,18 +217,18 @@
                     digit.innerText = numero;
                     caracteres++;
                 }
-                
+
             }
         }
 
         function clickPonto() {
-            if (caracteres == 0 ) {
+            if (caracteres == 0) {
                 digit.innerText = " . ";
             } else {
                 numero = numero + ".";
                 digit.innerText = numero;
             }
-            
+
         }
 
         function clickDividido() {
@@ -227,9 +243,9 @@
                 numero = null;
                 caracteres = 0;
             }
-            
+
         }
-        
+
         function clickMenos() {
             if (caracteres == 0) {
                 digit.innerText = " - ";
@@ -242,7 +258,7 @@
                 numero = null;
                 caracteres = 0;
             }
-            
+
         }
 
         function clickVezes() {
@@ -257,23 +273,56 @@
                 numero = null;
                 caracteres = 0;
             }
-            
+
         }
 
         function clickMais() {
-            if (caracteres == 0) {
-                digit.innerText = " + ";
-            } else {
-                numero1 = Number(numero);
-                numero = numero + " +";
-                digit.innerText = numero;
-                operadorAtivado = true;
-                maisAtivado = true;
-                numero = null;
-                caracteres = 0;
+            if (operadorAtivado == false) {
+                if (caracteres == 0) {
+                    digit.innerText = " + ";
+                } else {
+                    numero1 = Number(numero);
+                    console.log("numero1: " + numero1);
+                    numero = numero + " +";
+                    digit.innerText = numero;
+                    operadorAtivado = true;
+                    maisAtivado = true;
+                    numero = null;
+                    caracteres = 0;
+                    console.log("numero1 1º vez: " + numero1);
+                    console.log("numero2 1º vez: " + numero2);
+                }
             }
 
-          
+            if (operadorAtivado == true && igualAtivado == false) {
+                if (caracteres == 0) {  //não sei porquê dá certo, mas dá certo!
+
+                } else {
+                    numero2 = Number(numero);
+                    novoNum = numero1 + numero2;
+                    numero1 = novoNum;
+                    numero = String(novoNum);
+                    numero = numero + " +";
+                    digit.innerText = numero;
+                    operadorAtivado = true;
+                    maisAtivado = true;
+                    caracteres = 0;
+                    console.log("novoNum + de novo: " + novoNum);
+                    console.log("numero1 + de novo: " + numero1);
+                    console.log("numero2 + de novo: " + numero2);
+                }
+            }
+
+            if (operadorAtivado == true && igualAtivado == true) {
+                numero = resultado;
+                numero = numero + " +";
+                digit.innerText = numero;
+                resultado = null;
+
+            }
+
+
+
         }
 
         function clickIgual() {
@@ -290,25 +339,34 @@
                         resultado = numero1 / numero2;
                         digit.innerText = resultado;
                         divididoAtivado = false;
+                        numero1 = resultado;
                     }
 
                     if (menosAtivado == true) {
                         resultado = numero1 - numero2;
                         digit.innerText = resultado;
                         menosAtivado = false;
+                        numero1 = resultado;
                     }
 
                     if (vezesAtivado == true) {
                         resultado = numero1 * numero2;
                         digit.innerText = resultado;
                         vezesAtivado = false;
+                        numero1 = resultado;
                     }
 
                     if (maisAtivado == true) {
                         resultado = numero1 + numero2;
                         digit.innerText = resultado;
                         maisAtivado = false;
+                        numero1 = resultado;
+                        console.log("novoNum = : " + novoNum);
+                        console.log("numero1 = : " + numero1);
+                        console.log("numero2 = : " + numero2);
                     }
+
+                    igualAtivado = true;
                 }
 
 
@@ -319,7 +377,8 @@
 
         }
 
-        
+
     </script>
 </body>
+
 </html>
