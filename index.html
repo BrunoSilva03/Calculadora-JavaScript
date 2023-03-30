@@ -219,11 +219,12 @@
             if (caracteres == 0) {
                 digit.innerText = " / "
             } else {
+                numero1 = Number(numero);
                 numero = numero + " /"
                 digit.innerText = numero;
                 operadorAtivado = true;
                 divididoAtivado = true;
-                numero1 = Number(numero);
+                numero = null;
                 caracteres = 0;
             }
             
@@ -233,11 +234,13 @@
             if (caracteres == 0) {
                 digit.innerText = " - ";
             } else {
+                numero1 = Number(numero);
                 numero = numero + " -";
                 digit.innerText = numero;
                 operadorAtivado = true;
                 menosAtivado = true;
-                numero1 = Number(numero);
+                numero = null;
+                caracteres = 0;
             }
             
         }
@@ -246,11 +249,13 @@
             if (caracteres == 0) {
                 digit.innerText = " X ";
             } else {
+                numero1 = Number(numero);
                 numero = numero + " X";
                 digit.innerText = numero;
                 operadorAtivado = true;
                 vezesAtivado = true;
-                numero1 = Number(numero);
+                numero = null;
+                caracteres = 0;
             }
             
         }
@@ -259,11 +264,13 @@
             if (caracteres == 0) {
                 digit.innerText = " + ";
             } else {
+                numero1 = Number(numero);
                 numero = numero + " +";
                 digit.innerText = numero;
                 operadorAtivado = true;
                 maisAtivado = true;
-                numero1 = Number(numero);
+                numero = null;
+                caracteres = 0;
             }
 
           
@@ -276,11 +283,31 @@
                 if (operadorAtivado == false) {
                     digit.innerText = numero;
                 } else {
+
                     numero2 = Number(numero);
 
                     if (divididoAtivado == true) {
                         resultado = numero1 / numero2;
                         digit.innerText = resultado;
+                        divididoAtivado = false;
+                    }
+
+                    if (menosAtivado == true) {
+                        resultado = numero1 - numero2;
+                        digit.innerText = resultado;
+                        menosAtivado = false;
+                    }
+
+                    if (vezesAtivado == true) {
+                        resultado = numero1 * numero2;
+                        digit.innerText = resultado;
+                        vezesAtivado = false;
+                    }
+
+                    if (maisAtivado == true) {
+                        resultado = numero1 + numero2;
+                        digit.innerText = resultado;
+                        maisAtivado = false;
                     }
                 }
 
