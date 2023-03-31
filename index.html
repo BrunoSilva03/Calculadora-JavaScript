@@ -60,6 +60,7 @@
 
 
         function igualActivate() {  //verificar
+            
             if (igualAtivado == true) {
                 numero = null;
                 numero1 = null;
@@ -67,21 +68,29 @@
                 resultado = null;
                 caracteres = 0;
             }
+            
         }
 
 
         function click0() {
-
-           igualActivate();
 
             if (caracteres == 0) {
                 digit.innerText = "0";
                 numero = "0";
                 caracteres++;
             } else {
-                numero = numero + "0";
-                digit.innerText = numero;
-                caracteres++;
+                if (igualAtivado == true) {
+                    igualActivate();
+                    caracteres = 0;
+                    numero = "0";
+                    digit.innerText = numero;
+                    caracteres++;
+                } else {
+
+                    numero = numero + "0";
+                    digit.innerText = numero;
+                    caracteres++;
+                }
             }
 
             igualAtivado = false;
@@ -89,17 +98,23 @@
         }
 
         function click1() {
-
-            igualActivate();
-
             if (caracteres == 0) {
                 numero = "1";
                 digit.innerText = numero;
                 caracteres++
             } else {
-                numero = numero + "1";
-                digit.innerText = numero;
-                caracteres++;
+                if (igualAtivado == true) {
+                    igualActivate();
+                    caracteres = 0;
+                    numero = "1";
+                    digit.innerText = numero;
+                    caracteres++;
+                } else {
+
+                    numero = numero + "1";
+                    digit.innerText = numero;
+                    caracteres++;
+                }
 
             }
 
@@ -108,34 +123,50 @@
         }
 
         function click2() {
-
-            igualActivate();
-
             if (caracteres == 0) {
                 numero = "2";
                 digit.innerText = numero;
                 caracteres++
             } else {
-                numero = numero + "2";
-                digit.innerText = numero;
-                caracteres++;
+                if (igualAtivado == true) {
+                    igualActivate();
+                    caracteres = 0;
+                    numero = "2";
+                    digit.innerText = numero;
+                    caracteres++;
+                } else {
+
+                    numero = numero + "2";
+                    digit.innerText = numero;
+                    caracteres++;
+                }
             }
 
             igualAtivado = false;
         }
 
         function click3() {
-            
-            igualActivate();
-            
+
             if (caracteres == 0) {
                 numero = "3";
                 digit.innerText = numero;
                 caracteres++;
             } else {
-                numero = numero + "3";
-                digit.innerText = numero;
-                caracteres++;
+                if (igualAtivado == true) {
+                    igualActivate();
+                    caracteres = 0;
+                    numero = "3";
+                    digit.innerText = numero;
+                    caracteres++;
+
+                } else {
+                    numero = numero + "3";
+                    digit.innerText = numero;
+                    caracteres++;
+                }
+
+
+
             }
 
             igualAtivado = false;
@@ -144,16 +175,23 @@
 
         function click4() {
 
-            igualActivate();
-
             if (caracteres == 0) {
                 numero = "4";
                 digit.innerText = numero;
                 caracteres++
             } else {
-                numero = numero + "4";
-                digit.innerText = numero
-                caracteres++;
+                if (igualAtivado == true) {
+                    igualActivate();
+                    caracteres = 0;
+                    numero = "4";
+                    digit.innerText = numero;
+                    caracteres++;
+                } else {
+
+                    numero = numero + "4";
+                    digit.innerText = numero
+                    caracteres++;
+                }
             }
 
             igualAtivado = false;
@@ -162,16 +200,23 @@
 
         function click5() {
 
-            igualActivate();
-            
             if (caracteres == 0) {
                 numero = "5";
                 digit.innerText = numero;
                 caracteres++
             } else {
-                numero = numero + "5";
-                digit.innerText = numero;
-                caracteres++;
+                if (igualAtivado == true) {
+                    igualActivate();
+                    caracteres = 0;
+                    numero = "5";
+                    digit.innerText = numero;
+                    caracteres++;
+                } else {
+
+                    numero = numero + "5";
+                    digit.innerText = numero;
+                    caracteres++;
+                }
 
             }
 
@@ -180,16 +225,23 @@
 
         function click6() {
 
-            igualActivate();
-
             if (caracteres == 0) {
                 numero = "6";
                 digit.innerText = numero;
                 caracteres++
             } else {
-                numero = numero + "6";
-                digit.innerText = numero;
-                caracteres++;
+                if (igualAtivado == true) {
+                    igualActivate();
+                    caracteres = 0;
+                    numero = "6";
+                    digit.innerText = numero;
+                    caracteres++;
+                } else {
+
+                    numero = numero + "6";
+                    digit.innerText = numero;
+                    caracteres++;
+                }
             }
 
             igualAtivado = false;
@@ -198,16 +250,23 @@
 
         function click7() {
 
-            igualActivate();
-
             if (caracteres == 0) {
                 numero = "7";
                 digit.innerText = numero;
                 caracteres++
             } else {
-                numero = numero + "7";
-                digit.innerText = numero;
-                caracteres++;
+                if (igualAtivado == true) {
+                    igualActivate();
+                    caracteres = 0;
+                    numero = "7";
+                    digit.innerText = numero;
+                    caracteres++;
+                } else {
+
+                    numero = numero + "7";
+                    digit.innerText = numero;
+                    caracteres++;
+                }
             }
 
             igualAtivado = false;
@@ -215,17 +274,24 @@
         }
 
         function click8() {
-            
-            igualActivate();
 
             if (caracteres == 0) {
                 numero = "8";
                 digit.innerText = numero;
                 caracteres++
             } else {
-                numero = numero + "8";
-                digit.innerText = numero;
-                caracteres++;
+                if (igualAtivado == true) {
+                    igualActivate();
+                    caracteres = 0;
+                    numero = "8";
+                    digit.innerText = numero;
+                    caracteres++;
+                } else {
+
+                    numero = numero + "8";
+                    digit.innerText = numero;
+                    caracteres++;
+                }
             }
 
             igualAtivado = false;
@@ -234,16 +300,23 @@
 
         function click9() {
 
-            igualActivate();
-
             if (caracteres == 0) {
                 numero = "9";
                 digit.innerText = numero;
                 caracteres++;
             } else {
-                numero = numero + "9";
-                digit.innerText = numero;
-                caracteres++;
+                if (igualAtivado == true) {
+                    igualActivate();
+                    caracteres = 0;
+                    numero = "9";
+                    digit.innerText = numero;
+                    caracteres++;
+                } else {
+
+                    numero = numero + "9";
+                    digit.innerText = numero;
+                    caracteres++;
+                }
             }
 
             igualAtivado = false;
@@ -279,7 +352,7 @@
                     operadorAtivado = true;
                     maisAtivado = true;
                     caracteres = 0;
-                    
+
                 }
             }
 
