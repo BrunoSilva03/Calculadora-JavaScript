@@ -59,9 +59,21 @@
         var novoNum = null;
 
 
+        function igualActivate() {  //verificar
+            if (igualAtivado == true) {
+                numero = null;
+                numero1 = null;
+                numero2 = null;
+                resultado = null;
+                caracteres = 0;
+            }
+        }
 
 
         function click0() {
+
+           igualActivate();
+
             if (caracteres == 0) {
                 digit.innerText = "0";
                 numero = "0";
@@ -72,9 +84,14 @@
                 caracteres++;
             }
 
+            igualAtivado = false;
+
         }
 
         function click1() {
+
+            igualActivate();
+
             if (caracteres == 0) {
                 numero = "1";
                 digit.innerText = numero;
@@ -86,9 +103,14 @@
 
             }
 
+            igualAtivado = false;
+
         }
 
         function click2() {
+
+            igualActivate();
+
             if (caracteres == 0) {
                 numero = "2";
                 digit.innerText = numero;
@@ -99,9 +121,13 @@
                 caracteres++;
             }
 
+            igualAtivado = false;
         }
 
         function click3() {
+            
+            igualActivate();
+            
             if (caracteres == 0) {
                 numero = "3";
                 digit.innerText = numero;
@@ -112,9 +138,14 @@
                 caracteres++;
             }
 
+            igualAtivado = false;
+
         }
 
         function click4() {
+
+            igualActivate();
+
             if (caracteres == 0) {
                 numero = "4";
                 digit.innerText = numero;
@@ -124,10 +155,15 @@
                 digit.innerText = numero
                 caracteres++;
             }
+
+            igualAtivado = false;
         }
 
 
         function click5() {
+
+            igualActivate();
+            
             if (caracteres == 0) {
                 numero = "5";
                 digit.innerText = numero;
@@ -139,9 +175,13 @@
 
             }
 
+            igualAtivado = false;
         }
 
         function click6() {
+
+            igualActivate();
+
             if (caracteres == 0) {
                 numero = "6";
                 digit.innerText = numero;
@@ -152,9 +192,14 @@
                 caracteres++;
             }
 
+            igualAtivado = false;
+
         }
 
         function click7() {
+
+            igualActivate();
+
             if (caracteres == 0) {
                 numero = "7";
                 digit.innerText = numero;
@@ -165,9 +210,14 @@
                 caracteres++;
             }
 
+            igualAtivado = false;
+
         }
 
         function click8() {
+            
+            igualActivate();
+
             if (caracteres == 0) {
                 numero = "8";
                 digit.innerText = numero;
@@ -178,9 +228,14 @@
                 caracteres++;
             }
 
+            igualAtivado = false;
+
         }
 
         function click9() {
+
+            igualActivate();
+
             if (caracteres == 0) {
                 numero = "9";
                 digit.innerText = numero;
@@ -190,6 +245,9 @@
                 digit.innerText = numero;
                 caracteres++;
             }
+
+            igualAtivado = false;
+
         }
 
 
@@ -210,7 +268,6 @@
             }
 
             if (operadorAtivado == true) { //se já existe n1, alguém já clicou em + - * ou / ...
-                console.log("CHEGOU!");
                 if (caracteres == 0) {
 
                 } else {
@@ -236,6 +293,7 @@
                     numero2 = Number(numero);
                     resultado = numero1 + numero2;
                     digit.innerText = resultado;
+                    maisAtivado = false;
                 }
 
 
