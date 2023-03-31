@@ -193,7 +193,7 @@
         }
 
 
-        
+
         function clickMais() {
 
             if (operadorAtivado == false) {
@@ -210,14 +210,19 @@
             }
 
             if (operadorAtivado == true) { //se já existe n1, alguém já clicou em + - * ou / ...
+                console.log("CHEGOU!");
                 if (caracteres == 0) {
-                    digit.innerText = numero + " +";
+
                 } else {
                     numero2 = Number(numero);
-                    digit.innerText = numero;
-                    caracteres = 0;
-                    maisAtivado = true;
+                    novoNum = numero1 + numero2;
+                    numero1 = novoNum;
+                    numero = String(novoNum);
+                    digit.innerText = numero + " +";
                     operadorAtivado = true;
+                    maisAtivado = true;
+                    caracteres = 0;
+                    
                 }
             }
 
@@ -227,16 +232,13 @@
             if (caracteres == 0) {
                 digit.innerText = " = ";
             } else {
-                if (maisAtivado == true) {
-                    console.log("numero1: " + numero1);
-                    console.log("numero2: " + numero2);
+                if (maisAtivado = true) {
+                    numero2 = Number(numero);
                     resultado = numero1 + numero2;
                     digit.innerText = resultado;
-                    numero = resultado;
-                    operadorAtivado = false;
-                    maisAtivado = false;
-                    resultado = null;
                 }
+
+
 
                 igualAtivado = true;
             }
