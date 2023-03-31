@@ -43,7 +43,207 @@
     </div>
 
     <script>
+
+        var digit = window.document.getElementById('telaCalculadora');
+        var caracteres = 0;
+        var numero;
+        var operadorAtivado = false;
+        var maisAtivado = false;
+        var menosAtivado = false;
+        var divididoAtivado = false;
+        var vezesAtivado = false;
+        var igualAtivado = false;
+        var numero1 = null;
+        var numero2 = null;
+        var resultado = null;
+        var novoNum = null;
+
+
+
+
+        function click0() {
+            if (caracteres == 0) {
+                digit.innerText = "0";
+                numero = "0";
+                caracteres++;
+            } else {
+                numero = numero + "0";
+                digit.innerText = numero;
+                caracteres++;
+            }
+
+        }
+
+        function click1() {
+            if (caracteres == 0) {
+                numero = "1";
+                digit.innerText = numero;
+                caracteres++
+            } else {
+                numero = numero + "1";
+                digit.innerText = numero;
+                caracteres++;
+
+            }
+
+        }
+
+        function click2() {
+            if (caracteres == 0) {
+                numero = "2";
+                digit.innerText = numero;
+                caracteres++
+            } else {
+                numero = numero + "2";
+                digit.innerText = numero;
+                caracteres++;
+            }
+
+        }
+
+        function click3() {
+            if (caracteres == 0) {
+                numero = "3";
+                digit.innerText = numero;
+                caracteres++;
+            } else {
+                numero = numero + "3";
+                digit.innerText = numero;
+                caracteres++;
+            }
+
+        }
+
+        function click4() {
+            if (caracteres == 0) {
+                numero = "4";
+                digit.innerText = numero;
+                caracteres++
+            } else {
+                numero = numero + "4";
+                digit.innerText = numero
+                caracteres++;
+            }
+        }
+
+
+        function click5() {
+            if (caracteres == 0) {
+                numero = "5";
+                digit.innerText = numero;
+                caracteres++
+            } else {
+                numero = numero + "5";
+                digit.innerText = numero;
+                caracteres++;
+
+            }
+
+        }
+
+        function click6() {
+            if (caracteres == 0) {
+                numero = "6";
+                digit.innerText = numero;
+                caracteres++
+            } else {
+                numero = numero + "6";
+                digit.innerText = numero;
+                caracteres++;
+            }
+
+        }
+
+        function click7() {
+            if (caracteres == 0) {
+                numero = "7";
+                digit.innerText = numero;
+                caracteres++
+            } else {
+                numero = numero + "7";
+                digit.innerText = numero;
+                caracteres++;
+            }
+
+        }
+
+        function click8() {
+            if (caracteres == 0) {
+                numero = "8";
+                digit.innerText = numero;
+                caracteres++
+            } else {
+                numero = numero + "8";
+                digit.innerText = numero;
+                caracteres++;
+            }
+
+        }
+
+        function click9() {
+            if (caracteres == 0) {
+                numero = "9";
+                digit.innerText = numero;
+                caracteres++;
+            } else {
+                numero = numero + "9";
+                digit.innerText = numero;
+                caracteres++;
+            }
+        }
+
+
         
+        function clickMais() {
+
+            if (operadorAtivado == false) {
+                if (caracteres == 0) {
+                    digit.innerText = " + ";
+                } else {
+
+                    numero1 = Number(numero);
+                    digit.innerText = numero + " +";
+                    operadorAtivado = true;
+                    maisAtivado = true;
+                    caracteres = 0;
+                }
+            }
+
+            if (operadorAtivado == true) { //se já existe n1, alguém já clicou em + - * ou / ...
+                if (caracteres == 0) {
+                    digit.innerText = numero + " +";
+                } else {
+                    numero2 = Number(numero);
+                    digit.innerText = numero;
+                    caracteres = 0;
+                    maisAtivado = true;
+                    operadorAtivado = true;
+                }
+            }
+
+        }
+
+        function clickIgual() {
+            if (caracteres == 0) {
+                digit.innerText = " = ";
+            } else {
+                if (maisAtivado == true) {
+                    console.log("numero1: " + numero1);
+                    console.log("numero2: " + numero2);
+                    resultado = numero1 + numero2;
+                    digit.innerText = resultado;
+                    numero = resultado;
+                    operadorAtivado = false;
+                    maisAtivado = false;
+                    resultado = null;
+                }
+
+                igualAtivado = true;
+            }
+        }
+
+
+
     </script>
 </body>
 
