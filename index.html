@@ -9,8 +9,6 @@
     <link rel="shortcut icon" href="imagens/Oxygen-Icons.org-Oxygen-Apps-accessories-calculator.256.png"
         type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="meu-arquivo-js.js"></script>
-    <script type="text/javascript" src="tentativa1.js"></script>
 
 </head>
 
@@ -356,6 +354,36 @@
                 }
             }
 
+        }
+
+
+        function clickMenos() {
+            if (operadorAtivado == false) {
+                if (caracteres == 0) {
+                    digit.innerText = " - ";
+                } else {
+                    numero1 = Number(numero);
+                    digit.innerText = numero + " -";
+                    operadorAtivado = true;
+                    menosAtivado = true;
+                    caracteres = 0;
+                }
+            }
+
+            if (operadorAtivado == true) {
+                if (caracteres == 0) {
+
+                } else {
+                    numero2 = Number(numero);
+                    novoNum = numero1 - numero2;
+                    numero1 = novoNum;
+                    numero = String(novoNum);
+                    digit.innerText = numero + " -";
+                    operadorAtivado = true;
+                    menosAtivado = true;
+                    caracteres = 0;
+                }
+            }
         }
 
         function clickIgual() {
