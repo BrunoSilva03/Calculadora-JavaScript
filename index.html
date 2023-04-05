@@ -374,33 +374,54 @@
                 if (caracteres == 0) {
 
                 } else {
-                    numero2 = Number(numero);
-                    novoNum = numero1 - numero2;
-                    numero1 = novoNum;
-                    numero = String(novoNum);
-                    digit.innerText = numero + " -";
-                    operadorAtivado = true;
-                    menosAtivado = true;
-                    caracteres = 0;
+                    if (numero1 != null) {
+
+                        numero2 = Number(numero);
+                        novoNum = numero1 - numero2;
+                        numero1 = novoNum;
+                        numero = String(novoNum);
+                        digit.innerText = numero + " -";
+                        operadorAtivado = true;
+                        menosAtivado = true;
+                        caracteres = 0;
+                    } else {
+                        numero1 = Number(numero);
+                        digit.innerText = numero + " -";
+                        operadorAtivado = true;
+                        menosAtivado = true;
+                        caracteres = 0;
+                    }
                 }
             }
         }
 
         function clickIgual() {
-            if (caracteres == 0) {
-                digit.innerText = " = ";
-            } else {
-                if (maisAtivado = true) {
-                    numero2 = Number(numero);
-                    resultado = numero1 + numero2;
-                    digit.innerText = resultado;
-                    maisAtivado = false;
+
+                if (caracteres == 0) {
+                    digit.innerText = " = ";
+                } else {
+                    if (maisAtivado == true) {
+                        numero2 = Number(numero);
+                        resultado = numero1 + numero2;
+                        digit.innerText = resultado;
+                        maisAtivado = false;
+                    }
+
+                    if (menosAtivado == true) {
+                        numero2 = Number(numero);
+                        resultado = numero1 - numero2;
+                        digit.innerText = resultado;
+                        menosAtivado = false; 
+                    }
+                    
+                    
+                    
+                    igualAtivado = true;
                 }
+            
 
 
-
-                igualAtivado = true;
-            }
+            
         }
 
 
