@@ -51,10 +51,12 @@
         var divididoAtivado = false;
         var vezesAtivado = false;
         var igualAtivado = false;
+        var intersecaoMaiseMenos = false;
         var numero1 = null;
         var numero2 = null;
         var resultado = null;
         var novoNum = null;
+        
 
 
         function igualActivate() {  //verificar
@@ -376,14 +378,27 @@
                 } else {
                     if (numero1 != null) {
 
-                        numero2 = Number(numero);
-                        novoNum = numero1 - numero2;
-                        numero1 = novoNum;
-                        numero = String(novoNum);
-                        digit.innerText = numero + " -";
-                        operadorAtivado = true;
-                        menosAtivado = true;
-                        caracteres = 0;
+                        if (maisAtivado == true) {
+                            novoNum = numero1 + numero2;
+                            numero2 = novoNum;
+                            numero = String(novoNum);
+                            digit.innerText = numero + " -";
+                            operadorAtivado = true;
+                            menosAtivado = true;
+                            maisAtivado = false;
+                            caracteres = 0;
+                            intersecaoMaiseMenos = true;
+                        } else {
+
+                            numero2 = Number(numero);
+                            novoNum = numero1 - numero2;
+                            numero1 = novoNum;
+                            numero = String(novoNum);
+                            digit.innerText = numero + " -";
+                            operadorAtivado = true;
+                            menosAtivado = true;
+                            caracteres = 0;
+                        }
                     } else {
                         numero1 = Number(numero);
                         digit.innerText = numero + " -";
@@ -408,10 +423,19 @@
                     }
 
                     if (menosAtivado == true) {
-                        numero2 = Number(numero);
-                        resultado = numero1 - numero2;
-                        digit.innerText = resultado;
-                        menosAtivado = false; 
+                        if (intersecaoMaiseMenos == false) {
+
+                            numero2 = Number(numero);
+                            resultado = numero2 - numero1;
+                            digit.innerText = resultado;
+                            menosAtivado = false; 
+                        } else {
+                            novoNum = numero1 - numero2;
+                            numero2 = novoNum;
+                            digit.innerText = numero2;
+                            menosAtivado = false;
+                            intersecaoMaiseMenos = false;
+                        }
                     }
                     
                     
