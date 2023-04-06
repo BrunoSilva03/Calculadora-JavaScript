@@ -390,14 +390,30 @@
                             intersecaoMaiseMenos = true;
                         } else {
 
-                            numero2 = Number(numero);
-                            novoNum = numero1 - numero2;
-                            numero1 = novoNum;
-                            numero = String(novoNum);
-                            digit.innerText = numero + " -";
-                            operadorAtivado = true;
-                            menosAtivado = true;
-                            caracteres = 0;
+                            if (menosAtivado == true) {
+
+                                numero1 = novoNum;
+                                numero2 = Number(numero);
+                                novoNum = numero1 - numero2;
+                                numero1 = novoNum;
+                                numero = String(novoNum);
+                                digit.innerText = numero + " -";
+                                operadorAtivado = true;
+                                menosAtivado = true;
+                                caracteres = 0;
+                                
+                            } else {
+
+                                
+                                numero2 = Number(numero);
+                                novoNum = numero1 - numero2;
+                                numero1 = novoNum;
+                                numero = String(novoNum);
+                                digit.innerText = numero + " -";
+                                operadorAtivado = true;
+                                menosAtivado = true;
+                                caracteres = 0;
+                            }
                         }
                     } else {
                         numero1 = Number(numero);
