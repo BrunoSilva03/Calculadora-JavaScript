@@ -45,6 +45,14 @@
         var digit = window.document.getElementById('telaCalculadora');
         var caracteres = 0;
         var numero;
+        var numero1;
+        var numero2;
+        var novoNum;
+        var resultado;
+        var maisAtivado = false;
+        var menosAtivado = false;
+        var igualAtivado = false;
+
 
 
         function igualActivate() {
@@ -302,6 +310,71 @@
 
             igualAtivado = false;
 
+        }
+
+
+
+
+
+        function clickMais() {
+            if (caracteres == 0) {
+                digit.innerText = " + ";
+            } else {
+                if (maisAtivado) {
+                    maisConsecutivo();
+                } else {
+                    maisSimples();
+                }
+            }
+        }
+
+        function maisSimples() { //É o mais(+) simples, já tem um número, recebe outro e soma.
+            numero1 = Number(numero);
+            numero = numero + " +";
+            digit.innerText = numero;
+            maisAtivado = true;
+            caracteres = 0;
+        }
+
+        function maisConsecutivo() { //Quando o usuário vai somando sem clicar no igual, soma depois soma de novo e assim por diante.
+            numero2 = Number(numero);
+            novoNum = numero1 + numero2;
+            numero1 = novoNum;
+            digit.innerText = novoNum + " +";
+            caracteres = 0;
+        }
+
+
+        function clickMenos() {
+            if (caracteres == 0) {
+                digit.innerText = " - ";
+            } else {
+
+            }
+        }
+
+
+        function clickIgual() {
+            if (caracteres == 0) {
+                digit.innerText = " = ";
+            } else {
+                if (maisAtivado) { //Quando é a operação de Mais(+)
+                    numero2 = Number(numero);
+                    resultado = numero1 + numero2;
+                    digit.innerText = resultado;
+
+                }
+            }
+        }
+
+        function clickPonto() {
+            if (caracteres == 0) {
+                digit.innerText = " . ";
+            } else {
+                numero = numero + ".";
+                digit.innerText = numero;
+                caracteres++;
+            }
         }
 
 
