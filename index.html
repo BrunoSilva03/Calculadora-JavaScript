@@ -51,6 +51,8 @@
         var resultado;
         var maisAtivado = false;
         var menosAtivado = false;
+        var vezesAtivado = false;
+        var divididoAtivado = false;
         var igualAtivado = false;
         var intersecaoMaiseMenos = false;
 
@@ -62,6 +64,8 @@
             numero2 = null;
             maisAtivado = false;
             menosAtivado = false;
+            vezesAtivado = false;
+            divididoAtivado = false;
             caracteres = 0;
         }
 
@@ -351,7 +355,6 @@
             numero = numero + " +";
             digit.innerText = numero;
             maisAtivado = true;
-            operadorAtivado = true;
             caracteres = 0;
         }
 
@@ -361,7 +364,6 @@
             numero1 = novoNum;
             numero = novoNum;
             digit.innerText = numero + " +";
-            operadorAtivado = true;
             caracteres = 0;
         }
 
@@ -398,7 +400,6 @@
             numero = numero + " -";
             digit.innerText = numero;
             menosAtivado = true;
-            operadorAtivado = true;
             caracteres = 0;
         }
 
@@ -409,7 +410,6 @@
             numero1 = novoNum;
             numero = novoNum;
             digit.innerText = numero + " -";
-            operadorAtivado = true;
             caracteres = 0;
         }
 
@@ -419,6 +419,38 @@
             novoNum = numero1 + numero2;
         }
 
+        
+        function clickVezes() {
+            if (caracteres == 0) {
+                digit.innerText = " X ";
+            } else {
+                if(vezesAtivado) {
+                    vezesConsecutivo();
+                } else {
+                    vezesSimples();
+                }
+
+            }
+        }
+
+        function vezesSimples() {//é o vezes(*) simples, já tem um número, recebe outro e multiplica.
+            numero1 = Number(numero);
+            numero = numero + " X";
+            digit.innerText = numero;
+            vezesAtivado = true;
+            caracteres = 0;
+            
+        }
+
+        function vezesConsecutivo() { //Quando o usuário vai multiplicando sem clicar no igual, multiplica. depois multiplica de novo e assim por diante.
+            numero2 = Number(numero);
+            novoNum = numero1 * numero2;
+            numero1 = novoNum;
+            numero = novoNum;
+            digit.innerText = numero + " X";
+            caracteres = 0;
+
+        }
       
 
         function clickIgual() {
@@ -435,6 +467,12 @@
                 if (menosAtivado) { //Quando é operação de subtração(-)
                     numero2 = Number(numero);
                     resultado = numero1 - numero2;
+                    digit.innerText = resultado;
+                }
+
+                if (vezesAtivado) {
+                    numero2 = Number(numero);
+                    resultado = numero1 * numero2;
                     digit.innerText = resultado;
                 }
 
