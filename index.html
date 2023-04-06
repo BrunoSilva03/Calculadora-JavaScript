@@ -349,8 +349,29 @@
             if (caracteres == 0) {
                 digit.innerText = " - ";
             } else {
-
+                if (menosAtivado) {
+                    menosConsecutivo();
+                } else {
+                    menosSimples();
+                }
             }
+        }
+
+        function menosSimples() {//É o menos(-) simples, já tem um número, recebe outro e subtrai.
+            numero1 = Number(numero);
+            numero = numero + " -";
+            digit.innerText = numero;
+            menosAtivado = true;
+            caracteres = 0;
+        }
+
+
+        function menosConsecutivo() { //Quando o usuário vai subtraindo sem clicar no igual, subtrai depois subtrai de novo e assim por diante.
+            numero2 = Number(numero);
+            novoNum = numero1 - numero2;
+            numero1 = novoNum;
+            digit.innerText = novoNum + " -";
+            caracteres = 0;
         }
 
 
@@ -364,6 +385,13 @@
                     digit.innerText = resultado;
 
                 }
+
+                if (menosAtivado) { //Quando é operação de subtração(-)
+                    numero2 = Number(numero);
+                    resultado = numero1 - numero2;
+                    digit.innerText = resultado;
+                }
+
             }
         }
 
