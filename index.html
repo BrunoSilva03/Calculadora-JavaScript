@@ -45,48 +45,28 @@
         var digit = window.document.getElementById('telaCalculadora');
         var caracteres = 0;
         var numero;
-        var operadorAtivado = false;
-        var maisAtivado = false;
-        var menosAtivado = false;
-        var divididoAtivado = false;
-        var vezesAtivado = false;
-        var igualAtivado = false;
-        var intersecaoMaiseMenos = false;
-        var numero1 = null;
-        var numero2 = null;
-        var resultado = null;
-        var novoNum = null;
-        
 
 
-        function igualActivate() {  //verificar
-            
-            if (igualAtivado == true) {
-                numero = null;
-                numero1 = null;
-                numero2 = null;
-                resultado = null;
-                caracteres = 0;
-            }
-            
+        function igualActivate() {
+            numero = null;
+            numero1 = null;
+            numero2 = null;
+            caracteres = 0;
         }
 
 
         function click0() {
-
             if (caracteres == 0) {
-                digit.innerText = "0";
                 numero = "0";
+                digit.innerText = numero;
                 caracteres++;
             } else {
-                if (igualAtivado == true) {
+                if (igualAtivado) {
                     igualActivate();
-                    caracteres = 0;
                     numero = "0";
                     digit.innerText = numero;
                     caracteres++;
                 } else {
-
                     numero = numero + "0";
                     digit.innerText = numero;
                     caracteres++;
@@ -96,6 +76,7 @@
             igualAtivado = false;
 
         }
+
 
         function click1() {
             if (caracteres == 0) {
@@ -321,147 +302,6 @@
 
             igualAtivado = false;
 
-        }
-
-
-
-        function clickMais() {
-
-            if (operadorAtivado == false) {
-                if (caracteres == 0) {
-                    digit.innerText = " + ";
-                } else {
-
-                    numero1 = Number(numero);
-                    digit.innerText = numero + " +";
-                    operadorAtivado = true;
-                    maisAtivado = true;
-                    caracteres = 0;
-                }
-            }
-
-            if (operadorAtivado == true) { //se já existe n1, alguém já clicou em + - * ou / ...
-                if (caracteres == 0) {
-
-                } else {
-                    numero2 = Number(numero);
-                    novoNum = numero1 + numero2;
-                    numero1 = novoNum;
-                    numero = String(novoNum);
-                    digit.innerText = numero + " +";
-                    operadorAtivado = true;
-                    maisAtivado = true;
-                    caracteres = 0;
-
-                }
-            }
-
-        }
-
-
-        function clickMenos() {
-            if (operadorAtivado == false) {
-                if (caracteres == 0) {
-                    digit.innerText = " - ";
-                } else {
-                    numero1 = Number(numero);
-                    digit.innerText = numero + " -";
-                    operadorAtivado = true;
-                    menosAtivado = true;
-                    caracteres = 0;
-                }
-            }
-
-            if (operadorAtivado == true) {
-                if (caracteres == 0) {
-
-                } else {
-                    if (numero1 != null) {
-
-                        if (maisAtivado == true) {
-                            novoNum = numero1 + numero2;
-                            numero2 = novoNum;
-                            numero = String(novoNum);
-                            digit.innerText = numero + " -";
-                            operadorAtivado = true;
-                            menosAtivado = true;
-                            maisAtivado = false;
-                            caracteres = 0;
-                            intersecaoMaiseMenos = true;
-                        } else {
-
-                            if (menosAtivado == true) {
-
-                                numero1 = novoNum;
-                                numero2 = Number(numero);
-                                novoNum = numero1 - numero2;
-                                numero1 = novoNum;
-                                numero = String(novoNum);
-                                digit.innerText = numero + " -";
-                                operadorAtivado = true;
-                                menosAtivado = true;
-                                caracteres = 0;
-                                
-                            } else {
-
-                                
-                                numero2 = Number(numero);
-                                novoNum = numero1 - numero2;
-                                numero1 = novoNum;
-                                numero = String(novoNum);
-                                digit.innerText = numero + " -";
-                                operadorAtivado = true;
-                                menosAtivado = true;
-                                caracteres = 0;
-                            }
-                        }
-                    } else {
-                        numero1 = Number(numero);
-                        digit.innerText = numero + " -";
-                        operadorAtivado = true;
-                        menosAtivado = true;
-                        caracteres = 0;
-                    }
-                }
-            }
-        }
-
-        function clickIgual() {
-
-                if (caracteres == 0) {
-                    digit.innerText = " = ";
-                } else {
-                    if (maisAtivado == true) {
-                        numero2 = Number(numero);
-                        resultado = numero1 + numero2;
-                        digit.innerText = resultado;
-                        maisAtivado = false;
-                    }
-
-                    if (menosAtivado == true) {
-                        if (intersecaoMaiseMenos == false) {
-
-                            numero2 = Number(numero);
-                            resultado = numero2 - numero1;
-                            digit.innerText = resultado;
-                            menosAtivado = false; 
-                        } else {
-                            novoNum = numero1 - numero2;
-                            numero2 = novoNum;
-                            digit.innerText = numero2;
-                            menosAtivado = false;
-                            intersecaoMaiseMenos = false;
-                        }
-                    }
-                    
-                    
-                    
-                    igualAtivado = true;
-                }
-            
-
-
-            
         }
 
 
