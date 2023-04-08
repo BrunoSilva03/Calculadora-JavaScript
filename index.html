@@ -55,6 +55,7 @@
         var divididoAtivado = false;
         var igualAtivado = false;
         var intersecaoMaiseMenos = false;
+        var operadorAtivado = false;
 
 
 
@@ -329,18 +330,26 @@
             if (caracteres == 0) {
                 digit.innerText = " + ";
             } else {
-                if (menosAtivado) { //Caso alguém já tenha feito operações de menos e agora esteja fazendo operações de mais também.
-                    intersecaoMaiseMenos = true;
-                    maisComMenos();
-                    numero1 = novoNum;
-                    numero = novoNum;
-                    digit.innerText = numero + " +";
-                    caracteres = 0;
-                    menosAtivado = false;
-                    maisAtivado = true;
+                if (operadorAtivado) {
 
+                    if (menosAtivado) { //Caso alguém já tenha feito operações de menos e agora esteja fazendo operações de mais também.
+                        intersecaoMaiseMenos = true;
+                        maisComMenos();
+                        numero1 = novoNum;
+                        numero = novoNum;
+                        digit.innerText = numero + " +";
+                        caracteres = 0;
+                        menosAtivado = false;
+                        maisAtivado = true;
+                    }
+/*
+                    if (vezesAtivado) {
+
+                        operadorAtivado = false;
+                    }
+                    */
+                
                 } else {
-
                     if (maisAtivado) {
                         maisConsecutivo();
                     } else {
@@ -348,148 +357,155 @@
                     }
                 }
             }
-        }
+            }
 
-        function maisSimples() { //É o mais(+) simples, já tem um número, recebe outro e soma.
-            numero1 = Number(numero);
-            numero = numero + " +";
-            digit.innerText = numero;
-            maisAtivado = true;
-            caracteres = 0;
-        }
+            function maisSimples() { //É o mais(+) simples, já tem um número, recebe outro e soma.
+                numero1 = Number(numero);
+                numero = numero + " +";
+                digit.innerText = numero;
+                maisAtivado = true;
+                caracteres = 0;
+            }
 
-        function maisConsecutivo() { //Quando o usuário vai somando sem clicar no igual, soma depois soma de novo e assim por diante.
-            numero2 = Number(numero);
-            novoNum = numero1 + numero2;
-            numero1 = novoNum;
-            numero = novoNum;
-            digit.innerText = numero + " +";
-            caracteres = 0;
-        }
+            function maisConsecutivo() { //Quando o usuário vai somando sem clicar no igual, soma depois soma de novo e assim por diante.
+                numero2 = Number(numero);
+                novoNum = numero1 + numero2;
+                numero1 = novoNum;
+                numero = novoNum;
+                digit.innerText = numero + " +";
+                caracteres = 0;
+            }
 
-        function maisComMenos() {
-        numero2 = Number(numero);
-        novoNum = numero1 - numero2;
-       }
+            function maisComMenos() {
+                numero2 = Number(numero);
+                novoNum = numero1 - numero2;
+            }
 
-        function clickMenos() {
-            if (caracteres == 0) {
-                digit.innerText = " - ";
-            } else {
-                if (maisAtivado) { //Caso alguém já tenha feito operações de mais e agora esteja fazendo operações de menos também.
-                    intersecaoMaiseMenos = true;
-                    menosComMais();
-                    numero1 = novoNum;
-                    numero = novoNum;
-                    digit.innerText = numero + " -";
-                    caracteres = 0;
-                    maisAtivado = false;
-                    menosAtivado = true;
+            function maisComVezes() {
+
+            }
+
+
+            function clickMenos() {
+                if (caracteres == 0) {
+                    digit.innerText = " - ";
                 } else {
-                    if (menosAtivado) {
-                        menosConsecutivo();
+                    if (maisAtivado) { //Caso alguém já tenha feito operações de mais e agora esteja fazendo operações de menos também.
+                        intersecaoMaiseMenos = true;
+                        menosComMais();
+                        numero1 = novoNum;
+                        numero = novoNum;
+                        digit.innerText = numero + " -";
+                        caracteres = 0;
+                        maisAtivado = false;
+                        menosAtivado = true;
                     } else {
-                        menosSimples();
+                        if (menosAtivado) {
+                            menosConsecutivo();
+                        } else {
+                            menosSimples();
+                        }
                     }
                 }
             }
-        }
 
-        function menosSimples() {//É o menos(-) simples, já tem um número, recebe outro e subtrai.
-            numero1 = Number(numero);
-            numero = numero + " -";
-            digit.innerText = numero;
-            menosAtivado = true;
-            caracteres = 0;
-        }
-
-
-        function menosConsecutivo() { //Quando o usuário vai subtraindo sem clicar no igual, subtrai depois subtrai de novo e assim por diante.
-            numero2 = Number(numero);
-            novoNum = numero1 - numero2;
-            numero1 = novoNum;
-            numero = novoNum;
-            digit.innerText = numero + " -";
-            caracteres = 0;
-        }
-
-
-        function menosComMais() {
-            numero2 = Number(numero);
-            novoNum = numero1 + numero2;
-        }
-
-        
-        function clickVezes() {
-            if (caracteres == 0) {
-                digit.innerText = " X ";
-            } else {
-                if(vezesAtivado) {
-                    vezesConsecutivo();
-                } else {
-                    vezesSimples();
-                }
-
-            }
-        }
-
-        function vezesSimples() {//é o vezes(*) simples, já tem um número, recebe outro e multiplica.
-            numero1 = Number(numero);
-            numero = numero + " X";
-            digit.innerText = numero;
-            vezesAtivado = true;
-            caracteres = 0;
-            
-        }
-
-        function vezesConsecutivo() { //Quando o usuário vai multiplicando sem clicar no igual, multiplica. depois multiplica de novo e assim por diante.
-            numero2 = Number(numero);
-            novoNum = numero1 * numero2;
-            numero1 = novoNum;
-            numero = novoNum;
-            digit.innerText = numero + " X";
-            caracteres = 0;
-
-        }
-      
-
-        function clickIgual() {
-            if (caracteres == 0) {
-                digit.innerText = " = ";
-            } else {
-                if (maisAtivado) { //Quando é a operação de Mais(+)
-                    numero2 = Number(numero);
-                    resultado = numero1 + numero2;
-                    digit.innerText = resultado;
-
-                }
-
-                if (menosAtivado) { //Quando é operação de subtração(-)
-                    numero2 = Number(numero);
-                    resultado = numero1 - numero2;
-                    digit.innerText = resultado;
-                }
-
-                if (vezesAtivado) {
-                    numero2 = Number(numero);
-                    resultado = numero1 * numero2;
-                    digit.innerText = resultado;
-                }
-
-                igualAtivado = true;
-
-            }
-        }
-
-        function clickPonto() {
-            if (caracteres == 0) {
-                digit.innerText = " . ";
-            } else {
-                numero = numero + ".";
+            function menosSimples() {//É o menos(-) simples, já tem um número, recebe outro e subtrai.
+                numero1 = Number(numero);
+                numero = numero + " -";
                 digit.innerText = numero;
-                caracteres++;
+                menosAtivado = true;
+                caracteres = 0;
             }
-        }
+
+
+            function menosConsecutivo() { //Quando o usuário vai subtraindo sem clicar no igual, subtrai depois subtrai de novo e assim por diante.
+                numero2 = Number(numero);
+                novoNum = numero1 - numero2;
+                numero1 = novoNum;
+                numero = novoNum;
+                digit.innerText = numero + " -";
+                caracteres = 0;
+            }
+
+
+            function menosComMais() {
+                numero2 = Number(numero);
+                novoNum = numero1 + numero2;
+            }
+
+
+            function clickVezes() {
+                if (caracteres == 0) {
+                    digit.innerText = " X ";
+                } else {
+                    if (vezesAtivado) {
+                        vezesConsecutivo();
+                    } else {
+                        vezesSimples();
+                    }
+
+                    operadorAtivado = true;
+
+                }
+            }
+
+            function vezesSimples() {//é o vezes(*) simples, já tem um número, recebe outro e multiplica.
+                numero1 = Number(numero);
+                numero = numero + " X";
+                digit.innerText = numero;
+                vezesAtivado = true;
+                caracteres = 0;
+
+            }
+
+            function vezesConsecutivo() { //Quando o usuário vai multiplicando sem clicar no igual, multiplica. depois multiplica de novo e assim por diante.
+                numero2 = Number(numero);
+                novoNum = numero1 * numero2;
+                numero1 = novoNum;
+                numero = novoNum;
+                digit.innerText = numero + " X";
+                caracteres = 0;
+
+            }
+
+
+            function clickIgual() {
+                if (caracteres == 0) {
+                    digit.innerText = " = ";
+                } else {
+                    if (maisAtivado) { //Quando é a operação de Mais(+)
+                        numero2 = Number(numero);
+                        resultado = numero1 + numero2;
+                        digit.innerText = resultado;
+
+                    }
+
+                    if (menosAtivado) { //Quando é operação de subtração(-)
+                        numero2 = Number(numero);
+                        resultado = numero1 - numero2;
+                        digit.innerText = resultado;
+                    }
+
+                    if (vezesAtivado) {
+                        numero2 = Number(numero);
+                        resultado = numero1 * numero2;
+                        digit.innerText = resultado;
+                    }
+
+                    igualAtivado = true;
+
+                }
+            }
+
+            function clickPonto() {
+                if (caracteres == 0) {
+                    digit.innerText = " . ";
+                } else {
+                    numero = numero + ".";
+                    digit.innerText = numero;
+                    caracteres++;
+                }
+            }
 
 
 
