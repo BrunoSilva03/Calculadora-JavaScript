@@ -342,12 +342,12 @@
                         menosAtivado = false;
                         maisAtivado = true;
                     }
-/*
-                    if (vezesAtivado) {
 
-                        operadorAtivado = false;
+                    if (vezesAtivado) {
+                        maisComVezes();
+                        
                     }
-                    */
+                    
                 
                 } else {
                     if (maisAtivado) {
@@ -382,7 +382,10 @@
             }
 
             function maisComVezes() {
-
+                numero2 = Number(numero);
+                digit.innerText = numero + " X";
+                vezesAtivado = false;
+                operadorAtivado = false;
             }
 
 
