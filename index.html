@@ -41,8 +41,328 @@
     </div>
 
     <script>
+        var digit = window.document.getElementById('telaCalculadora');
+        var caracteres = 0;
+        var numero1;
+        var numero2;
+        var novoNum;
+        var resultado;
+        var igualAtivado = false;
+        var maisAtivado = false;
+        var menosAtivado = false;
+        var vezesAtivado = false;
+        var divididoAtivado = false;
+        var operadorAtivado = false;
+
+
         
-       
+
+        function igualActivate() {
+            numero = null;
+            numero1 = null;
+            numero2 = null;
+            novoNum = null;
+            maisAtivado = null;
+            menosAtivado = null;
+            vezesAtivado = null;
+            divididoAtivado = null;
+            operadorAtivado = null;
+            caracteres = 0;
+        }
+
+
+        function click0() {
+            if (caracteres == 0) {
+                numero = "0";
+                digit.innerText = numero;
+                caracteres++;
+            } else {
+                if (igualAtivado) {
+                    igualActivate();
+                    numero = "0";
+                    digit.innerText = numero;
+                    caracteres++;
+                } else {
+                    numero = numero + "0";
+                    digit.innerText = numero;
+                    caracteres++;
+                }
+            }
+
+            igualAtivado = false;
+
+        }
+
+
+        function click1() {
+            if (caracteres == 0) {
+                numero = "1";
+                digit.innerText = numero;
+                caracteres++
+            } else {
+                if (igualAtivado == true) {
+                    igualActivate();
+                    caracteres = 0;
+                    numero = "1";
+                    digit.innerText = numero;
+                    caracteres++;
+                } else {
+
+                    numero = numero + "1";
+                    digit.innerText = numero;
+                    caracteres++;
+                }
+
+            }
+
+            igualAtivado = false;
+
+        }
+
+        function click2() {
+            if (caracteres == 0) {
+                numero = "2";
+                digit.innerText = numero;
+                caracteres++
+            } else {
+                if (igualAtivado == true) {
+                    igualActivate();
+                    caracteres = 0;
+                    numero = "2";
+                    digit.innerText = numero;
+                    caracteres++;
+                } else {
+
+                    numero = numero + "2";
+                    digit.innerText = numero;
+                    caracteres++;
+                }
+            }
+
+            igualAtivado = false;
+        }
+
+        function click3() {
+
+            if (caracteres == 0) {
+                numero = "3";
+                digit.innerText = numero;
+                caracteres++;
+            } else {
+                if (igualAtivado == true) {
+                    igualActivate();
+                    caracteres = 0;
+                    numero = "3";
+                    digit.innerText = numero;
+                    caracteres++;
+
+                } else {
+
+                    numero = numero + "3";
+                    digit.innerText = numero;
+                    caracteres++;
+
+                }
+
+
+
+            }
+
+            igualAtivado = false;
+
+        }
+
+        function click4() {
+
+            if (caracteres == 0) {
+                numero = "4";
+                digit.innerText = numero;
+                caracteres++
+            } else {
+                if (igualAtivado == true) {
+                    igualActivate();
+                    caracteres = 0;
+                    numero = "4";
+                    digit.innerText = numero;
+                    caracteres++;
+                } else {
+
+                    numero = numero + "4";
+                    digit.innerText = numero
+                    caracteres++;
+                }
+            }
+
+            igualAtivado = false;
+        }
+
+
+        function click5() {
+
+            if (caracteres == 0) {
+                numero = "5";
+                digit.innerText = numero;
+                caracteres++
+            } else {
+                if (igualAtivado == true) {
+                    igualActivate();
+                    caracteres = 0;
+                    numero = "5";
+                    digit.innerText = numero;
+                    caracteres++;
+                } else {
+
+                    numero = numero + "5";
+                    digit.innerText = numero;
+                    caracteres++;
+                }
+
+            }
+
+            igualAtivado = false;
+        }
+
+        function click6() {
+
+            if (caracteres == 0) {
+                numero = "6";
+                digit.innerText = numero;
+                caracteres++
+            } else {
+                if (igualAtivado == true) {
+                    igualActivate();
+                    caracteres = 0;
+                    numero = "6";
+                    digit.innerText = numero;
+                    caracteres++;
+                } else {
+
+                    numero = numero + "6";
+                    digit.innerText = numero;
+                    caracteres++;
+                }
+            }
+
+            igualAtivado = false;
+
+        }
+
+        function click7() {
+
+            if (caracteres == 0) {
+                numero = "7";
+                digit.innerText = numero;
+                caracteres++
+            } else {
+                if (igualAtivado == true) {
+                    igualActivate();
+                    caracteres = 0;
+                    numero = "7";
+                    digit.innerText = numero;
+                    caracteres++;
+                } else {
+
+                    numero = numero + "7";
+                    digit.innerText = numero;
+                    caracteres++;
+                }
+            }
+
+            igualAtivado = false;
+
+        }
+
+        function click8() {
+
+            if (caracteres == 0) {
+                numero = "8";
+                digit.innerText = numero;
+                caracteres++
+            } else {
+                if (igualAtivado == true) {
+                    igualActivate();
+                    caracteres = 0;
+                    numero = "8";
+                    digit.innerText = numero;
+                    caracteres++;
+                } else {
+
+                    numero = numero + "8";
+                    digit.innerText = numero;
+                    caracteres++;
+                }
+            }
+
+            igualAtivado = false;
+
+        }
+
+        function click9() {
+
+            if (caracteres == 0) {
+                numero = "9";
+                digit.innerText = numero;
+                caracteres++;
+            } else {
+                if (igualAtivado == true) {
+                    igualActivate();
+                    caracteres = 0;
+                    numero = "9";
+                    digit.innerText = numero;
+                    caracteres++;
+                } else {
+
+                    numero = numero + "9";
+                    digit.innerText = numero;
+                    caracteres++;
+                }
+            }
+
+            igualAtivado = false;
+
+        }
+
+
+        function clickMais() {
+            if (caracteres == 0) {
+                digit.innerText = " + ";
+                igualActivate(); //lancei esse método para zerar os valores caso tenham.
+            } else {
+                if (operadorAtivado) {
+                    maisConsecutivo();
+                } else {
+                    maisSimples();
+                }
+            }
+        }
+
+        function maisSimples() { //mais simples, já tem um valor, e a pessoa clica no mais.
+            numero1 = Number(numero);
+            numero = numero + " +";
+            digit.innerText = numero;
+            operadorAtivado = true;
+            maisAtivado = true;
+            caracteres = 0;
+
+        }
+
+
+        function maisConsecutivo() { //a pessoa ou usuário já fez outras contas anteriormente sem clicar no igual e agora está fazendo contas de mais também.
+            
+        }
+
+
+        function clickIgual(){
+            if (maisAtivado) {
+                numero2 = Number(numero);
+                resultado = numero1 + numero2;
+                digit.innerText = resultado;
+                caracteres = 0;
+            }
+
+            igualAtivado = true;
+        }
+
     </script>
 </body>
 
