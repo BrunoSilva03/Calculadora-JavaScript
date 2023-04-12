@@ -62,17 +62,20 @@
             numero1 = null;
             numero2 = null;
             novoNum = null;
-            maisAtivado = null;
-            menosAtivado = null;
-            vezesAtivado = null;
-            divididoAtivado = null;
-            operadorAtivado = null;
+            maisAtivado = false;
+            menosAtivado = false;
+            vezesAtivado = false;
+            divididoAtivado = false;
+            operadorAtivado = false;
             caracteres = 0;
         }
 
 
         function click0() {
             if (caracteres == 0) {
+                if(igualAtivado) {
+                    igualActivate();
+                }
                 numero = "0";
                 digit.innerText = numero;
                 caracteres++;
@@ -96,6 +99,9 @@
 
         function click1() {
             if (caracteres == 0) {
+                if (igualAtivado) {
+                    igualActivate();
+                }
                 numero = "1";
                 digit.innerText = numero;
                 caracteres++
@@ -121,6 +127,9 @@
 
         function click2() {
             if (caracteres == 0) {
+                if (igualAtivado) {
+                    igualActivate();
+                }
                 numero = "2";
                 digit.innerText = numero;
                 caracteres++
@@ -145,6 +154,9 @@
         function click3() {
 
             if (caracteres == 0) {
+                if (igualAtivado) {
+                    igualActivate();
+                } 
                 numero = "3";
                 digit.innerText = numero;
                 caracteres++;
@@ -175,6 +187,9 @@
         function click4() {
 
             if (caracteres == 0) {
+                if (igualAtivado) {
+                    igualActivate();
+                }
                 numero = "4";
                 digit.innerText = numero;
                 caracteres++
@@ -200,6 +215,9 @@
         function click5() {
 
             if (caracteres == 0) {
+                if(igualAtivado) {
+                    igualActivate();
+                }
                 numero = "5";
                 digit.innerText = numero;
                 caracteres++
@@ -225,6 +243,9 @@
         function click6() {
 
             if (caracteres == 0) {
+                if (igualAtivado) {
+                    igualActivate();
+                }
                 numero = "6";
                 digit.innerText = numero;
                 caracteres++
@@ -250,6 +271,9 @@
         function click7() {
 
             if (caracteres == 0) {
+                if (igualAtivado) {
+                    igualActivate();
+                }
                 numero = "7";
                 digit.innerText = numero;
                 caracteres++
@@ -275,6 +299,9 @@
         function click8() {
 
             if (caracteres == 0) {
+                if (igualAtivado) {
+                    igualActivate();
+                }
                 numero = "8";
                 digit.innerText = numero;
                 caracteres++
@@ -300,6 +327,9 @@
         function click9() {
 
             if (caracteres == 0) {
+                if (igualAtivado) {
+                    igualActivate();
+                }
                 numero = "9";
                 digit.innerText = numero;
                 caracteres++;
@@ -348,7 +378,8 @@
 
 
         function maisConsecutivo() { //a pessoa ou usuário já fez outras contas anteriormente sem clicar no igual e agora está fazendo contas de mais também.
-            
+            numero2 = Number(numero);
+
         }
 
 
