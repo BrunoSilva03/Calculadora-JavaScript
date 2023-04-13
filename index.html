@@ -53,6 +53,7 @@
         var vezesAtivado = false;
         var divididoAtivado = false;
         var operadorAtivado = false;
+        var temNumero = false;
 
 
         
@@ -352,11 +353,20 @@
 
         }
 
+        
+
 
         function clickMais() {
             if (caracteres == 0) {
-                digit.innerText = " + ";
-                igualActivate(); //lancei esse método para zerar os valores caso tenham.
+                if (temNumero) { //depois que clica no igual, mas clica no mais aproveitando o resultado que já está na tela
+                    numero = resultado;
+                    maisSimples();
+                    igualAtivado = false;
+                } else {
+
+                    digit.innerText = " + ";
+                    igualActivate(); //lancei esse método para zerar os valores caso tenham.
+                }
             } else {
                 if (operadorAtivado) {
                     maisConsecutivo();
@@ -379,6 +389,11 @@
 
         function maisConsecutivo() { //a pessoa ou usuário já fez outras contas anteriormente sem clicar no igual e agora está fazendo contas de mais também.
             numero2 = Number(numero);
+            novoNum = numero1 + numero2;
+            numero1 = novoNum;
+            numero = novoNum;
+            digit.innerText = numero + " +";
+            caracteres = 0;
 
         }
 
@@ -391,6 +406,7 @@
                 caracteres = 0;
             }
 
+            temNumero = true;
             igualAtivado = true;
         }
 
