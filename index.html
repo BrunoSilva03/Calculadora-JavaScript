@@ -413,14 +413,15 @@
         }
 
 
-        function maisComMenos() { //quando a pessoa ou o usuário faz cálculos de mais e menos seguidamente sem clicar no igual.
+        function maisComMenos() { //quando a pessoa ou o usuário faz cálculos de mais e menos seguidamente sem clicar no igual. E esse é pra usar na função de mais.
             numero2 = Number(numero);
             novoNum = numero1 - numero2;
             numero1 = novoNum;
             numero = novoNum;
             digit.innerText = numero + " +";
             caracteres = 0;
-            menosAtivado = false; //cuidado com isso aqui.
+            menosAtivado = false; 
+            maisAtivado = true;
         }
 
         function clickMenos() {
@@ -435,7 +436,12 @@
                 }
             } else {
                 if (operadorAtivado) {
-                    menosConsecutivo();
+                    if (maisAtivado) {
+                        menosComMais();
+                    } else {
+
+                        menosConsecutivo();
+                    }
                 } else {
                     menosSimples()
                 }
@@ -459,6 +465,17 @@
             numero = novoNum;
             digit.innerText = numero + " -";
             caracteres = 0;
+        }
+
+        function menosComMais() { //quando a pessoa ou o usuário faz cálculos de menos e mais consecutivamente sem clicar no botão de igual.Esse é pra usar na função de menos.
+            numero2 = Number(numero);
+            novoNum = numero1 + numero2;
+            numero1 = novoNum;
+            numero = novoNum;
+            digit.innerText = numero + " -";
+            caracteres = 0;
+            maisAtivado = false;
+            menosAtivado = true;
         }
 
 
