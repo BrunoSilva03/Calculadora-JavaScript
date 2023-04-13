@@ -379,7 +379,11 @@
                 }
             } else {
                 if (operadorAtivado) {
-                    maisConsecutivo();
+                    if (menosAtivado) {
+                        maisComMenos();
+                    } else {
+                        maisConsecutivo();
+                    }
                 } else {
                     maisSimples();
                 }
@@ -404,7 +408,19 @@
             numero = novoNum;
             digit.innerText = numero + " +";
             caracteres = 0;
+            maisAtivado = true;
 
+        }
+
+
+        function maisComMenos() { //quando a pessoa ou o usuário faz cálculos de mais e menos seguidamente sem clicar no igual.
+            numero2 = Number(numero);
+            novoNum = numero1 - numero2;
+            numero1 = novoNum;
+            numero = novoNum;
+            digit.innerText = numero + " +";
+            caracteres = 0;
+            menosAtivado = false; //cuidado com isso aqui.
         }
 
         function clickMenos() {
