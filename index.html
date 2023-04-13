@@ -368,7 +368,7 @@
 
         function clickMais() {
             if (caracteres == 0) {
-                if (temNumero) { //depois que clica no igual, mas clica no mais aproveitando o resultado que já está na tela
+                if (temNumero) { //depois que clica no igual, mas clica no mais aproveitando o resultado que já está na tela para realizar mais cálculos.
                     numero = resultado;
                     maisSimples();
                     igualAtivado = false;
@@ -397,7 +397,7 @@
         }
 
 
-        function maisConsecutivo() { //a pessoa ou usuário já fez outras contas anteriormente sem clicar no igual e agora está fazendo contas de mais também.
+        function maisConsecutivo() { //a pessoa ou  o usuário já fez outras contas anteriormente sem clicar no igual e agora está fazendo contas de mais também.
             numero2 = Number(numero);
             novoNum = numero1 + numero2;
             numero1 = novoNum;
@@ -405,6 +405,44 @@
             digit.innerText = numero + " +";
             caracteres = 0;
 
+        }
+
+        function clickMenos() {
+            if (caracteres == 0) {
+                if (temNumero) { //depois que clica no igual, mas clica no menos aproveitando o resultado que já está na tela para realizar mais cálculos.
+                    numero = resultado;
+                    menosSimples();
+                    igualAtivado = false;
+                } else {
+                    digit.innerTExt = " - ";
+                    igualActivate();
+                }
+            } else {
+                if (operadorAtivado) {
+                    menosConsecutivo();
+                } else {
+                    menosSimples()
+                }
+            }
+        }
+
+        function menosSimples() { //menos simples, já tem um valor, e a pessoa clica no menos.
+            numero1 = Number(numero);
+            numero = numero + " -";
+            digit.innerText = numero;
+            operadorAtivado = true;
+            menosAtivado = true;
+            caracteres = 0;
+        }
+
+
+        function menosConsecutivo() { //a pessoa ou o usuário já fez outras contas anteriormente sem clicar no igual e agora está fazendo contas de menos também.
+            numero2 = Number(numero);
+            novoNum = numero1 - numero2;
+            numero1 = novoNum;
+            numero = novoNum;
+            digit.innerText = numero + " -";
+            caracteres = 0;
         }
 
 
@@ -419,6 +457,16 @@
                     digit.innerText = resultado;
                     caracteres = 0;
                     maisAtivado = false;
+                    temNumero = true;
+                    igualAtivado = true;
+                }
+
+                if (menosAtivado) {
+                    numero2 = Number(numero);
+                    resultado = numero1 - numero2;
+                    digit.innerText = resultado;
+                    caracteres = 0;
+                    menosAtivado = false;
                     temNumero = true;
                     igualAtivado = true;
                 }
