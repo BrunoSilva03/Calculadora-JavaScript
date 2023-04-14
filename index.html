@@ -386,7 +386,12 @@
                         if (vezesAtivado) {
                             maisComVezes();
                         } else {
-                            maisConsecutivo();
+                            if (divididoAtivado) {
+                                maisComDividido();
+                            } else {
+
+                                maisConsecutivo();
+                            }
                         }
                     }
 
@@ -442,6 +447,18 @@
             maisAtivado = true;
         }
 
+
+        function maisComDividido() {
+            numero2 = Number(numero);
+            novoNum = numero1 / numero2;
+            numero1 = novoNum;
+            numero = novoNum;
+            digit.innerText = numero + " +";
+            caracteres = 0;
+            divididoAtivado = false;
+            maisAtivado = true;
+        }
+
         function clickMenos() {
             if (caracteres == 0) {
                 if (temNumero) { //depois que clica no igual, mas clica no menos aproveitando o resultado que já está na tela para realizar mais cálculos.
@@ -460,8 +477,12 @@
                         if (vezesAtivado) {
                             menosComVezes();
                         } else {
+                            if (divididoAtivado) {
+                                menosComDividido();
+                            } else {
 
-                            menosConsecutivo();
+                                menosConsecutivo();
+                            }
                         }
                     }
                 } else {
@@ -513,6 +534,18 @@
         }
 
 
+        function menosComDividido() {
+            numero2 = Number(numero);
+            novoNum = numero1 / numero2;
+            numero1 = novoNum;
+            numero = novoNum;
+            digit.innerText = numero + " -";
+            caracteres = 0;
+            divididoAtivado = false;
+            menosAtivado = true;
+        }
+
+
         function clickVezes() {
             if (caracteres == 0) {
                 if (temNumero) {
@@ -531,7 +564,12 @@
                         if (menosAtivado) {
                             vezesComMenos();
                         } else {
-                            vezesConsecutivo();
+                            if (divididoAtivado) {
+                                vezesComDividido();
+                            } else {
+
+                                vezesConsecutivo();
+                            }
                         }
                     }
                         
@@ -562,9 +600,6 @@
         }
 
 
-
-
-
         function vezesComMais() {  //quando clicaram em mais e agora clicaram em vezes
             numero2 = Number(numero);
             novoNum = numero1 + numero2;
@@ -575,8 +610,6 @@
             maisAtivado = false;
             vezesAtivado = true;
         }
-
-
 
         function vezesComMenos() {  //quando clicaram em menos e agora clicaram em vezes
             numero2 = Number(numero);
@@ -589,6 +622,105 @@
             vezesAtivado = true;
         }
 
+
+
+        function vezesComDividido() { //quando clicaram em dividido e agora clicaram em vezes
+            numero2 = Number(numero);
+            novoNum = numero1 / numero2;
+            numero1 = novoNum;
+            numero = novoNum;
+            digit.innerText = numero + " X";
+            caracteres = 0;
+            divididoAtivado = false;
+            vezesAtivado = true;
+        }
+
+
+        function clickDividido() {
+            if (caracteres == 0) {
+                if (temNumero) {
+                    numero = resultado;
+                    divididoSimples();
+                    igualAtivado = false;
+                } else {
+                    digit.innerText = " / ";
+                    igualActivate();
+                }
+            } else {
+                if (operadorAtivado) {
+                    if (maisAtivado) {
+                        divididoComMais();
+                    } else {
+                        if (menosAtivado) {
+                            divididoComMenos();
+                        } else {
+                            if (vezesAtivado) {
+                                divididoComVezes();
+                            } else {
+                                divididoConsecutivo();
+                            }
+                        }
+                    }
+                } else {
+                    divididoSimples();
+                }
+            }
+        }
+
+        function divididoSimples() { //dividido simples, já tem um valor, a pessoa clica em dividido.
+            numero1 = Number(numero);
+            numero = numero + " /";
+            digit.innerText = numero;
+            operadorAtivado = true;
+            divididoAtivado = true;
+            caracteres = 0;
+        }
+
+
+        function divididoConsecutivo() { //a pessoa já fez outras contas anteriormente sem clicar no igual e agora está fazendo contas de dividido também.
+            numero2 = Number(numero);
+            novoNum = numero1 / numero2;
+            numero1 = novoNum;
+            numero = novoNum;
+            digit.innerText = numero + " /";
+            caracteres = 0;
+        }
+
+        function divididoComMais() {
+            numero2 = Number(numero);
+            novoNum = numero1 + numero2;
+            numero1 = novoNum;
+            numero = novoNum;
+            digit.innerText = numero + " /";
+            caracteres = 0;
+            maisAtivado = false;
+            divididoAtivado = true;
+        }
+
+
+        function divididoComMenos() {
+            numero2 = Number(numero);
+            novoNum = numero1 - numero2;
+            numero1 = novoNum;
+            numero = novoNum;
+            digit.innerText = numero + " /";
+            caracteres = 0;
+            menosAtivado = false;
+            divididoAtivado = true;
+        }
+
+
+
+        function divididoComVezes() {
+            numero2 = Number(numero);
+            novoNum = numero1 * numero2;
+            numero1 = novoNum;
+            numero = novoNum;
+            digit.innerText = numero + " /";
+            caracteres = 0;
+            vezesAtivado = false;
+            divididoAtivado = true;
+        }
 
 
 
@@ -623,6 +755,17 @@
                     digit.innerText = resultado;
                     caracteres = 0;
                     vezesAtivado = false;
+                    temNumero = true;
+                    igualAtivado = true;
+                }
+
+
+                if (divididoAtivado) {
+                    numero2 = Number(numero);
+                    resultado = numero1 / numero2;
+                    digit.innerText = resultado;
+                    caracteres = 0;
+                    divididoAtivado = false;
                     temNumero = true;
                     igualAtivado = true;
                 }
