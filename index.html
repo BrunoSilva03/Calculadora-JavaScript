@@ -54,6 +54,7 @@
         var divididoAtivado = false;
         var operadorAtivado = false;
         var temNumero = false;
+        var verificaLimpar = false;
 
 
 
@@ -71,6 +72,27 @@
             caracteres = 0;
         }
 
+        function clickLimpar() {
+            let novaString;
+
+            if (verificaLimpar == true) {
+                numero = String(resultado);
+                verificaLimpar = false;
+
+            }
+            novaString = numero.slice(0, numero.length - 1);
+            numero = novaString;
+            digit.innerText = numero;
+            caracteres--;
+
+            if (caracteres <= 0) {
+                temNumero = false;
+                caracteres = 0;
+            }
+
+            
+            
+        }
 
         function click0() {
             if (caracteres == 0) {
@@ -737,6 +759,7 @@
                     maisAtivado = false;
                     temNumero = true;
                     igualAtivado = true;
+                    verificaLimpar = true;
                 }
 
                 if (menosAtivado) {
@@ -747,6 +770,7 @@
                     menosAtivado = false;
                     temNumero = true;
                     igualAtivado = true;
+                    verificaLimpar = true;
                 }
 
                 if (vezesAtivado) {
@@ -757,6 +781,7 @@
                     vezesAtivado = false;
                     temNumero = true;
                     igualAtivado = true;
+                    verificaLimpar = true;
                 }
 
 
@@ -768,6 +793,7 @@
                     divididoAtivado = false;
                     temNumero = true;
                     igualAtivado = true;
+                    verificaLimpar = true;
                 }
 
 
