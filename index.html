@@ -431,7 +431,7 @@
                     menosSimples();
                     igualAtivado = false;
                 } else {
-                    digit.innerTExt = " - ";
+                    digit.innerText = " - ";
                     igualActivate();
                 }
             } else {
@@ -479,6 +479,47 @@
         }
 
 
+        function clickVezes() {  
+            if (caracteres == 0) {
+                if (temNumero) {
+                    numero = resultado;
+                    vezesSimples();
+                    igualAtivado = false;
+                } else {
+                    digit.innerText = " X ";
+                    igualActivate();
+                }
+            } else {
+                if (operadorAtivado) {
+                    if (maisAtivado) {
+                        vezesConsecutivo();
+                    }
+                } else {
+                    vezesSimples();
+                }
+            }
+        }
+
+        function vezesSimples() { //vezes simples, já tem um valor, a pessoa clica no vezes.
+            numero1 = Number(numero);
+            numero = numero + " X";
+            digit.innerText = numero;
+            operadorAtivado = true;
+            vezesAtivado = true;
+            caracteres = 0;
+        }
+
+
+        function vezesConsecutivo() { //a pessoa já fez outras contas anteriormente sem clicar no igual e agora está fazendo contas de vezes também.
+            numero2 = Number(numero);
+            novoNum = numero1 * numero2;
+            numero1 = novoNum;
+            numero = novoNum;
+            digit.innerText = numero + " X";
+            caracteres = 0;
+        }
+
+
         function clickIgual() {
             if (caracteres == 0 && !operadorAtivado) {
                 digit.innerText = " = ";
@@ -500,6 +541,16 @@
                     digit.innerText = resultado;
                     caracteres = 0;
                     menosAtivado = false;
+                    temNumero = true;
+                    igualAtivado = true;
+                }
+
+                if (vezesAtivado) {
+                    numero2 = Number(numero);
+                    resultado = numero1 * numero2;
+                    digit.innerText = resultado;
+                    caracteres = 0;
+                    vezesAtivado = false;
                     temNumero = true;
                     igualAtivado = true;
                 }
