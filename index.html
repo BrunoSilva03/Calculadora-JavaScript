@@ -382,8 +382,14 @@
                     if (menosAtivado) {
                         maisComMenos();
                     } else {
-                        maisConsecutivo();
+
+                        if (vezesAtivado) {
+                            maisComVezes();
+                        } else {
+                            maisConsecutivo();
+                        }
                     }
+
                 } else {
                     maisSimples();
                 }
@@ -420,7 +426,19 @@
             numero = novoNum;
             digit.innerText = numero + " +";
             caracteres = 0;
-            menosAtivado = false; 
+            menosAtivado = false;
+            maisAtivado = true;
+        }
+
+
+        function maisComVezes() {
+            numero2 = Number(numero);
+            novoNum = numero1 * numero2;
+            numero1 = novoNum;
+            numero = novoNum;
+            digit.innerText = numero + " +";
+            caracteres = 0;
+            vezesAtivado = false;
             maisAtivado = true;
         }
 
@@ -439,8 +457,12 @@
                     if (maisAtivado) {
                         menosComMais();
                     } else {
+                        if (vezesAtivado) {
+                            menosComVezes();
+                        } else {
 
-                        menosConsecutivo();
+                            menosConsecutivo();
+                        }
                     }
                 } else {
                     menosSimples()
@@ -479,7 +501,19 @@
         }
 
 
-        function clickVezes() {  
+        function menosComVezes() {
+            numero2 = Number(numero);
+            novoNum = numero1 * numero2;
+            numero1 = novoNum;
+            numero = novoNum;
+            digit.innerText = numero + " -";
+            caracteres = 0;
+            vezesAtivado = false;
+            menosAtivado = true;
+        }
+
+
+        function clickVezes() {
             if (caracteres == 0) {
                 if (temNumero) {
                     numero = resultado;
@@ -491,9 +525,17 @@
                 }
             } else {
                 if (operadorAtivado) {
-                    if (vezesAtivado) {
-                        vezesConsecutivo();
+                    if (maisAtivado) {
+                        vezesComMais();
+                    } else {
+                        if (menosAtivado) {
+                            vezesComMenos();
+                        } else {
+                            vezesConsecutivo();
+                        }
                     }
+                        
+                    
                 } else {
                     vezesSimples();
                 }
@@ -518,6 +560,36 @@
             digit.innerText = numero + " X";
             caracteres = 0;
         }
+
+
+
+
+
+        function vezesComMais() {  //quando clicaram em mais e agora clicaram em vezes
+            numero2 = Number(numero);
+            novoNum = numero1 + numero2;
+            numero1 = novoNum;
+            numero = novoNum;
+            digit.innerText = numero + " X";
+            caracteres = 0;
+            maisAtivado = false;
+            vezesAtivado = true;
+        }
+
+
+
+        function vezesComMenos() {  //quando clicaram em menos e agora clicaram em vezes
+            numero2 = Number(numero);
+            novoNum = numero1 - numero2;
+            numero1 = novoNum;
+            numero = novoNum;
+            digit.innerText = numero + " X";
+            caracteres = 0;
+            menosAtivado = false;
+            vezesAtivado = true;
+        }
+
+
 
 
         function clickIgual() {
